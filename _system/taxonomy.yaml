@@ -1,0 +1,190 @@
+version: 1
+updated: 2026-11-05
+rules:
+  - Tag form is dimension/slug, lowercase, kebab-case.
+  - Every highlight carries at least one theme tag and at least one behavior or topic tag.
+  - Segments are task-based (what the person is trying to do), never demographic.
+  - AI may add tags with status proposed. Only a human sets active or deprecated.
+  - Deprecated tags keep merged_into so migrate_tag.py can rewrite notes.
+dimensions:
+  product:
+    description: Which product or surface the evidence is about. Demo values are fictional.
+    required: false
+    tags:
+      - id: product/fluxbench-designer
+        definition: The FluxBench Designer desktop application (fictional demo product).
+        status: active
+        created: 2026-11-05
+      - id: product/eval-kit
+        definition: Physical evaluation boards and the firmware that ships with them.
+        status: active
+        created: 2026-11-05
+      - id: product/docs-portal
+        definition: Online datasheets, app notes, and reference designs.
+        status: active
+        created: 2026-11-05
+      - id: product/licensing
+        definition: Trial, activation, seats, and offline licensing.
+        status: active
+        created: 2026-11-05
+  method:
+    description: How the source was collected.
+    required: false
+    tags:
+      - id: method/interview
+        definition: Semi-structured one-to-one interview.
+        status: active
+        created: 2026-11-05
+      - id: method/usability-test
+        definition: Task-based moderated or unmoderated test.
+        status: active
+        created: 2026-11-05
+      - id: method/contextual-inquiry
+        definition: Observation at the participant's own workplace or bench.
+        status: active
+        created: 2026-11-05
+      - id: method/survey
+        definition: Questionnaire, quantitative or open-ended.
+        status: active
+        created: 2026-11-05
+      - id: method/workshop
+        definition: Group session, co-design, or mapping exercise.
+        status: active
+        created: 2026-11-05
+  segment:
+    description: Task-based participant segment. What they are trying to accomplish, not their title.
+    required: false
+    tags:
+      - id: segment/designing-power-stage
+        definition: Selecting parts and topology for a new design.
+        status: active
+        created: 2026-11-05
+      - id: segment/validating-design
+        definition: Testing, correlating, and signing off a design on hardware.
+        status: active
+        created: 2026-11-05
+      - id: segment/supporting-customers
+        definition: Helping other engineers get a design working (FAE, support).
+        status: active
+        created: 2026-11-05
+      - id: segment/evaluating-tools
+        definition: Deciding whether to adopt or standardize on a tool.
+        status: active
+        created: 2026-11-05
+  behavior:
+    description: What the participant was doing when the evidence arose. The most retrieval-valuable dimension.
+    required: false
+    tags:
+      - id: behavior/configure
+        definition: Setting parameters, choosing components, building a design in the tool.
+        status: active
+        created: 2026-11-05
+      - id: behavior/simulate
+        definition: Running or interpreting a simulation.
+        status: active
+        created: 2026-11-05
+      - id: behavior/troubleshoot
+        definition: Diagnosing why something doesn't work or doesn't match.
+        status: active
+        created: 2026-11-05
+      - id: behavior/compare
+        definition: Weighing parts, tools, or results against each other.
+        status: active
+        created: 2026-11-05
+      - id: behavior/look-up
+        definition: Finding a datasheet, value, example, or answer.
+        status: active
+        created: 2026-11-05
+      - id: behavior/export
+        definition: "Getting data out: BOM, schematic, report, screenshots."
+        status: active
+        created: 2026-11-05
+      - id: behavior/share
+        definition: Handing a design or result to a colleague or customer.
+        status: active
+        created: 2026-11-05
+      - id: behavior/learn
+        definition: First use, onboarding, figuring out how a feature works.
+        status: active
+        created: 2026-11-05
+      - id: behavior/install
+        definition: Downloading, installing, activating, updating.
+        status: active
+        created: 2026-11-05
+  theme:
+    description: The kind of finding. Required on every highlight.
+    required: true
+    tags:
+      - id: theme/pain
+        definition: Something that blocked, slowed, or frustrated the participant.
+        examples: ["I gave up and did it in a spreadsheet"]
+        status: active
+        created: 2026-11-05
+      - id: theme/need
+        definition: An outcome the participant must achieve, stated or implied, regardless of tool.
+        status: active
+        created: 2026-11-05
+      - id: theme/workaround
+        definition: A method the participant uses to get around a limitation.
+        status: active
+        created: 2026-11-05
+      - id: theme/delight
+        definition: Something that worked unexpectedly well or that they praised unprompted.
+        status: active
+        created: 2026-11-05
+      - id: theme/mental-model
+        definition: How the participant believes the system works, right or wrong.
+        status: active
+        created: 2026-11-05
+      - id: theme/request
+        definition: An explicit feature ask. Record it, but weigh it below needs and pains.
+        status: active
+        created: 2026-11-05
+      - id: theme/trust
+        definition: Confidence or doubt in results, data, or the vendor.
+        status: active
+        created: 2026-11-05
+      - id: theme/expectation-gap
+        definition: The tool behaved differently from what the participant assumed.
+        status: active
+        created: 2026-11-05
+  topic:
+    description: Domain subject. Add sparingly; prefer behavior and theme.
+    required: false
+    tags:
+      - id: topic/onboarding
+        definition: First-run experience, getting to a first useful result.
+        status: active
+        created: 2026-11-05
+      - id: topic/accuracy
+        definition: Whether results match reality or expectations.
+        status: active
+        created: 2026-11-05
+      - id: topic/hardware-correlation
+        definition: Matching simulation to measurements on the bench.
+        status: active
+        created: 2026-11-05
+      - id: topic/performance
+        definition: Speed, responsiveness, crashes.
+        status: active
+        created: 2026-11-05
+      - id: topic/bom
+        definition: Bill of materials, part availability, cost.
+        status: active
+        created: 2026-11-05
+      - id: topic/documentation
+        definition: Datasheets, app notes, in-tool help.
+        status: active
+        created: 2026-11-05
+      - id: topic/collaboration
+        definition: Working with colleagues, reviews, handoffs.
+        status: active
+        created: 2026-11-05
+      - id: topic/versioning
+        definition: Design history, reproducibility, file compatibility.
+        status: active
+        created: 2026-11-05
+      - id: topic/offline
+        definition: Working without network or behind a firewall.
+        status: active
+        created: 2026-11-05

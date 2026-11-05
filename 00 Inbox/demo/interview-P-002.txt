@@ -1,0 +1,59 @@
+[00:00:04] Interviewer: You support customers who use FluxBench Designer. Can you describe a typical week?
+
+[00:00:10] P-002: I cover about forty accounts in my region. Maybe a third of the questions I get are about the tool rather than the silicon. A customer builds something in FluxBench, it doesn't do what they expect, they send me a screenshot and ask what's wrong.
+
+[00:00:45] Interviewer: A screenshot, not the project file?
+
+[00:00:48] P-002: Almost always a screenshot. Sometimes a PDF export. The project file would be better, but half my customers are on a version I can't open, because they installed it a year ago and never updated. If they're on 3.2 and I'm on 3.6, my tool refuses the file. So screenshots it is.
+
+[00:01:25] Interviewer: What do you do with the screenshot?
+
+[00:01:28] P-002: I rebuild the design on my side from what I can see, which takes twenty to thirty minutes, and I usually get one parameter wrong because it's hidden. Then we're on a call comparing screens. If I could open their exact file, or if they could send me a link to their design, that would save most of that.
+
+[00:02:05] Interviewer: Where do you do this work physically?
+
+[00:02:08] P-002: Customer sites a lot of the time. And that's where the licensing bites. The tool checks in with the license server every so often, and customer networks either block it or make me go through a guest portal. Twice this year it locked me out in front of a customer. I now carry a second laptop that I activated at home and never connect to anything.
+
+[00:02:55] Interviewer: That's a serious workaround.
+
+[00:02:57] P-002: It's a stupid workaround, but it works. I'd rather have a proper offline mode. Thirty days of grace would cover any trip.
+
+[00:03:15] Interviewer: When a customer's result looks wrong, what's the usual cause?
+
+[00:03:20] P-002: Three things, in order. One, they changed a part and the tool silently reset parameters. Two, they're comparing against a measurement with a different load than they simulated. Three, the model for that part is just conservative and the tool doesn't say so. The first one I see every week.
+
+[00:04:00] Interviewer: How do you explain the silent reset to customers?
+
+[00:04:04] P-002: I tell them to screenshot the advanced panel before and after changing anything. Which is ridiculous advice for a modern tool, but it's what works. I've got a one-page PDF I send out called Before You Trust The Number. It's basically a checklist of the hidden defaults.
+
+[00:04:40] Interviewer: You wrote that yourself?
+
+[00:04:42] P-002: Yes. The official docs are organized by feature, not by task. Nobody wants to read about the solver settings, they want to know why their ripple is wrong. My checklist is organized by symptom. Customers tell me it's more useful than the help portal, which is a nice thing to hear and also a bit of a problem.
+
+[00:05:20] Interviewer: Do you use the documentation portal yourself?
+
+[00:05:23] P-002: For datasheets, constantly. For the tool, rarely. The search on the portal returns the datasheet, the eval board guide and the tool help all mixed together, and the tool help is usually three results down. I bookmark the five pages I need.
+
+[00:05:55] Interviewer: What about the evaluation kits? Do they come into this?
+
+[00:05:59] P-002: All the time. The ideal flow is: customer simulates in FluxBench, buys the eval kit, measures, and it matches. When it matches, the sale is basically done. When it doesn't match, I get a call, and usually the eval board has a different inductor than the simulation default because the kit was revised and the model wasn't.
+
+[00:06:40] Interviewer: How often does the kit and the model disagree?
+
+[00:06:44] P-002: I'd say one in four kits has something different from the model's default assumptions. It's never a huge difference, but it's enough to make a careful engineer stop trusting the tool, and careful engineers are exactly who I want using it.
+
+[00:07:15] Interviewer: What do customers say they like?
+
+[00:07:18] P-002: Speed to a first schematic. A new engineer can have a plausible design in ten minutes. And the part finder with stock levels, people mention that unprompted. The thermal estimate too, once they've seen it match a board.
+
+[00:07:45] Interviewer: If you could change one thing about how designs move between you and customers?
+
+[00:07:50] P-002: A shareable link, or at minimum a file format that opens across versions. Right now a FluxBench design is stuck on one machine. The silicon is a shared thing between us and the customer; the design should be too.
+
+[00:08:20] Interviewer: And one thing about the tool itself?
+
+[00:08:23] P-002: Tell the user when you changed something they didn't ask for. That one change would cut my tool questions in half. I'm not exaggerating.
+
+[00:08:45] Interviewer: Anything else?
+
+[00:08:47] P-002: Only that I'd like a way to see what version of a part model a design used. When a model gets updated, old designs change results on reopening and the customer thinks they did something wrong. A model version in the file and a note on open would settle a lot of arguments.

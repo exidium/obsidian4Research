@@ -1,0 +1,38 @@
+filters:
+  and:
+    - note.type == "highlight"
+views:
+  - type: table
+    name: All highlights
+    order:
+      - file.name
+      - note.project
+      - note.participant
+      - note.tags
+      - note.review
+      - note.quote
+    sort:
+      - property: note.project
+        direction: ASC
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: Pains
+    filters:
+      and:
+        - note.tags.contains("theme/pain")
+    order:
+      - file.name
+      - note.project
+      - note.participant
+      - note.quote
+  - type: table
+    name: Accepted only
+    filters:
+      and:
+        - note.review == "accepted"
+    order:
+      - file.name
+      - note.project
+      - note.tags
+      - note.quote

@@ -1,0 +1,20 @@
+# Local-only raw zone: media, participant key, anything with identity
+_raw/
+# Media dropped in the inbox is moved to _raw by ingest; never commit it
+00 Inbox/**/*.mp4
+00 Inbox/**/*.mov
+00 Inbox/**/*.m4a
+00 Inbox/**/*.mp3
+00 Inbox/**/*.wav
+00 Inbox/**/*.aiff
+00 Inbox/**/*.webm
+00 Inbox/**/*.mkv
+# Obsidian per-machine state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+# OS / tooling
+.DS_Store
+__pycache__/
+*.pyc
+.venv/

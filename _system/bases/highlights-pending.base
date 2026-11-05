@@ -1,0 +1,17 @@
+filters:
+  and:
+    - note.type == "highlight"
+    - note.review == "proposed"
+    - file.folder.startsWith(this.file.folder)
+views:
+  - type: table
+    name: Pending review
+    order:
+      - file.name
+      - note.participant
+      - note.tags
+      - note.quote
+      - note.created_by
+    sort:
+      - property: file.name
+        direction: ASC

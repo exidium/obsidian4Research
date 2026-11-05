@@ -1,0 +1,17 @@
+filters:
+  and:
+    - note.type == "source"
+    - file.folder.startsWith(this.file.folder)
+views:
+  - type: table
+    name: Sources
+    order:
+      - file.name
+      - note.participant
+      - note.method
+      - note.date
+      - note.duration_min
+      - note.status
+    sort:
+      - property: note.date
+        direction: ASC

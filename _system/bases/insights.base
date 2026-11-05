@@ -1,0 +1,16 @@
+filters:
+  and:
+    - note.type == "insight"
+    - file.folder.startsWith(this.file.folder)
+views:
+  - type: table
+    name: Insights
+    order:
+      - note.title
+      - note.confidence
+      - note.status
+      - note.participants
+      - note.tags
+    sort:
+      - property: note.confidence
+        direction: DESC

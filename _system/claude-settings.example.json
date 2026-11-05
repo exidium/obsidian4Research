@@ -1,0 +1,21 @@
+{
+  "_comment": "Copy to .claude/settings.json. Deny rules keep the agent from reading the raw zone; allow rules remove prompts for the pipeline scripts.",
+  "permissions": {
+    "allow": [
+      "Bash(uv run _system/scripts/*)",
+      "Bash(python3 _system/scripts/*)",
+      "Bash(bash _system/scripts/*)",
+      "Bash(mlx_whisper *)",
+      "Bash(ffmpeg *)",
+      "Bash(ffprobe *)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)"
+    ],
+    "deny": [
+      "Read(./_raw/**)",
+      "Edit(./_raw/**)",
+      "Write(./_raw/**)"
+    ]
+  }
+}

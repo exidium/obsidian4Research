@@ -1,0 +1,8 @@
+date	skill	action	target	model
+2026-11-05T19:43:31Z	research-ingest	ingest	S-0001	claude-fable-5-1
+2026-11-05T19:43:31Z	research-process	highlight	S-0001	claude-fable-5-1
+2026-11-05T19:43:31Z	research-ingest	ingest	S-0002	claude-fable-5-1
+2026-11-05T19:43:31Z	research-process	highlight	S-0002	claude-fable-5-1
+2026-11-05T19:43:31Z	research-ingest	ingest	S-0003	claude-fable-5-1
+2026-11-05T19:43:31Z	research-process	highlight	S-0003	claude-fable-5-1
+2026-11-05T19:43:31Z	research-process	synthesize	2026_demo-fluxbench	claude-fable-5-1

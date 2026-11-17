@@ -7,7 +7,7 @@ group_name: 3. Simulation vs Bench
 level: project
 status: active
 definition: Results are aggregated in a way that blocks diagnosing which mechanism is off.
-highlights: 1
+highlights: 2
 participants: 1
 counted: 2026-11-17
 project: 2026_demo-fluxbench

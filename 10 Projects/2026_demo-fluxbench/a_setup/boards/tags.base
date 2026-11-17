@@ -30,6 +30,7 @@ views:
       - "6. Documentation and Support"
       - "7. Export and Handoff"
       - "8. Part Selection"
+      - "9. Competition"
     order:
       - file.name
       - note.definition

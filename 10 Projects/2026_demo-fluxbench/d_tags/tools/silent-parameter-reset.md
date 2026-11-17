@@ -7,8 +7,8 @@ group_name: 2. Tool Behaviour
 level: project
 status: active
 definition: The tool changed a value the user had set
-highlights: 4
-participants: 2
+highlights: 19
+participants: 3
 counted: 2026-11-17
 project: 2026_demo-fluxbench
 ---

@@ -7,8 +7,8 @@ group_name: 8. Part Selection
 level: project
 status: active
 definition: Part selection filtered by distributor stock; apply to selection moments.
-highlights: 1
-participants: 1
+highlights: 2
+participants: 2
 counted: 2026-11-17
 project: 2026_demo-fluxbench
 ---

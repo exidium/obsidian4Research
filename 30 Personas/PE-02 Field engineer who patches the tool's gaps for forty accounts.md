@@ -9,7 +9,7 @@ participant_type: internal-engineer
 markets: [market/broad-market]
 participants: [P-002]
 projects: [2026_demo-fluxbench]
-evidence_highlights: 12
+evidence_highlights: 37
 created: 2026-11-17
 updated: 2026-11-17
 insights: 5
@@ -58,7 +58,7 @@ They talk in cases and numbers. Ask for the last five tickets, not for opinions;
 - [[I-2026_demo-fluxbench-04 Eval kits and their simulation models drift apart, and the mismatch|I-2026_demo-fluxbench-04]] Eval kits and their simulation models drift apart, and the mismatch surfaces at the moment of decision · 2 of their highlights · emerging
 - [[I-2026_demo-fluxbench-05 Licensing assumes a connected machine; labs and customer sites aren't|I-2026_demo-fluxbench-05]] Licensing assumes a connected machine; labs and customer sites aren't · 2 of their highlights · emerging
 
-**Highlights (12)**
+**Highlights (37)**
 - [[H-S0002-0001 Version lock forces screenshots|H-S0002-0001]] Version lock forces screenshots · insight/pain-point, sentiment/negative, journey/support, sharing/file-version-lock, sharing/screenshot-support
 - [[H-S0002-0002 Rebuilding designs from screenshots|H-S0002-0002]] Rebuilding designs from screenshots · functionality/workaround, insight/pain-point, sentiment/negative, journey/support, sharing/screenshot-support, tools/hidden-defaults
 - [[H-S0002-0003 Second laptop as a licensing workaround|H-S0002-0003]] Second laptop as a licensing workaround · functionality/workaround, insight/pain-point, sentiment/negative, journey/support, licensing/license-lockout
@@ -71,4 +71,29 @@ They talk in cases and numbers. Ask for the last five tickets, not for opinions;
 - [[H-S0002-0010 Designs should be shared like the silicon|H-S0002-0010]] Designs should be shared like the silicon · insight/desire, functionality/new-feature-request, sentiment/neutral, journey/integrate, sharing/file-version-lock
 - [[H-S0002-0011 Announce changes, halve support questions|H-S0002-0011]] Announce changes, halve support questions · functionality/new-feature-request, sentiment/neutral, journey/support, tools/silent-parameter-reset
 - [[H-S0002-0012 Model updates change old results on reopen|H-S0002-0012]] Model updates change old results on reopen · insight/pain-point, sentiment/negative, journey/design, tools/model-version-drift
+- [[H-S0002-0013 Model got more honest, customer blamed the part|H-S0002-0013]] Model got more honest, customer blamed the part · insight/pain-point, sentiment/negative, journey/design, market/industrial-automation, tools/model-version-drift, tools/design-history-missing
+- [[H-S0002-0014 Model-version dialog on open, with diff|H-S0002-0014]] Model-version dialog on open, with diff · functionality/new-feature-request, insight/desire, sentiment/neutral, journey/design, tools/model-version-drift, tools/design-history-missing, tools/result-reproducibility
+- [[H-S0002-0015 VM per project to freeze the tool|H-S0002-0015]] VM per project to freeze the tool · functionality/workaround, insight/pain-point, sentiment/negative, journey/validate, market/digital-healthcare, tools/model-version-drift, tools/result-reproducibility
+- [[H-S0002-0016 Forty percent of cases are silent resets|H-S0002-0016]] Forty percent of cases are silent resets · insight/pain-point, sentiment/neutral, journey/support, tools/silent-parameter-reset, licensing/license-lockout, correlation/sim-vs-bench-gap, sharing/file-version-lock
+- [[H-S0002-0017 Read-only bench PC, dongle requested|H-S0002-0017]] Read-only bench PC, dongle requested · insight/pain-point, functionality/workaround, functionality/new-feature-request, journey/validate, market/communications, licensing/license-lockout, licensing/offline-activation
+- [[H-S0002-0018 Reset is by design, reported four times|H-S0002-0018]] Reset is "by design", reported four times · insight/pain-point, functionality/new-feature-request, sentiment/negative, journey/support, tools/silent-parameter-reset, workflow/no-owner-for-wrong-number
+- [[H-S0002-0019 Which part change resets which parameter|H-S0002-0019]] Which part change resets which parameter · experience/advanced, sentiment/neutral, journey/design, tools/silent-parameter-reset, tools/hidden-defaults
+- [[H-S0002-0020 Engineers forgive error, not silence|H-S0002-0020]] Engineers forgive error, not silence · insight/pain-point, sentiment/negative, journey/design, market/automotive, tools/silent-parameter-reset
+- [[H-S0002-0021 Tool picks the part, spreadsheet designs|H-S0002-0021]] Tool picks the part, spreadsheet designs · insight/pain-point, sentiment/negative, journey/design, experience/advanced, market/communications, tools/silent-parameter-reset, workflow/tool-for-shopping-only
+- [[H-S0002-0022 Half of site visits are offline by policy|H-S0002-0022]] Half of site visits are offline by policy · insight/pain-point, sentiment/neutral, journey/support, market/aerospace-defence, licensing/offline-activation
+- [[H-S0002-0023 Checklist training halves cases, feature tour doesn't|H-S0002-0023]] Checklist training halves cases, feature tour doesn't · sentiment/neutral, journey/support, docs/shadow-docs, tools/hidden-defaults
+- [[H-S0002-0024 The number that explains itself is believed|H-S0002-0024]] The number that explains itself is believed · insight/pain-point, functionality/new-feature-request, sentiment/negative, journey/design, tools/hidden-defaults, correlation/thermal-correlated
+- [[H-S0002-0025 Competitors win on change summary and plain files|H-S0002-0025]] Competitors win on change summary and plain files · insight/desire, functionality/new-feature-request, sentiment/neutral, journey/evaluate, tools/silent-parameter-reset, sharing/file-version-lock
+- [[H-S0002-0026 Yours is for shopping, theirs for designing|H-S0002-0026]] "Yours is for shopping, theirs for designing" · insight/pain-point, sentiment/negative, journey/design, market/industrial-automation, sharing/file-version-lock, selection/part-finder-stock, workflow/tool-for-shopping-only
+- [[H-S0002-0027 Official tickets are a fifth of real cases|H-S0002-0027]] Official tickets are a fifth of real cases · insight/pain-point, functionality/new-feature-request, sentiment/neutral, journey/support
+- [[H-S0002-0028 Cut news feed, 3D view, assistant, update nag|H-S0002-0028]] Cut news feed, 3D view, assistant, update nag · functionality/feature-removal-request, sentiment/negative, journey/design, tools/silent-parameter-reset
+- [[H-S0002-0029 Shareable link read-only, every value, comments|H-S0002-0029]] Shareable link: read-only, every value, comments · functionality/new-feature-request, insight/desire, sentiment/neutral, journey/integrate, sharing/file-version-lock, sharing/screenshot-support
+- [[H-S0002-0030 Conservative models shown with false precision|H-S0002-0030]] Conservative models shown with false precision · insight/pain-point, functionality/new-feature-request, sentiment/negative, journey/validate, market/energy, correlation/accuracy-statement-missing, correlation/sim-vs-bench-gap
+- [[H-S0002-0031 QR code loads the board's real parts|H-S0002-0031]] QR code loads the board's real parts · functionality/new-feature-request, insight/pain-point, sentiment/neutral, journey/evaluate, correlation/kit-model-drift
+- [[H-S0002-0032 Nobody owns the number was wrong|H-S0002-0032]] Nobody owns "the number was wrong" · insight/pain-point, sentiment/negative, journey/support, workflow/no-owner-for-wrong-number
+- [[H-S0002-0033 Serious customers build rituals around the tool|H-S0002-0033]] Serious customers build rituals around the tool · functionality/workaround, insight/pain-point, sentiment/negative, journey/design, sharing/pdf-review-loop, tools/design-history-missing, tools/result-reproducibility
+- [[H-S0002-0034 First hour sells, second hour unsells|H-S0002-0034]] First hour sells, second hour unsells · insight/pain-point, experience/beginner, sentiment/negative, journey/design, tools/silent-parameter-reset, tools/hidden-defaults
+- [[H-S0002-0035 No warning is read as approval|H-S0002-0035]] No warning is read as approval · insight/pain-point, experience/beginner, sentiment/negative, journey/design, tools/hidden-defaults
+- [[H-S0002-0036 Near miss corrected model, marginal inductor|H-S0002-0036]] Near miss: corrected model, marginal inductor · insight/pain-point, sentiment/negative, journey/validate, market/automotive, tools/model-version-drift, correlation/sim-vs-bench-gap
+- [[H-S0002-0037 Three hygiene fixes, reset dialog first|H-S0002-0037]] Three hygiene fixes, reset dialog first · functionality/new-feature-request, sentiment/neutral, journey/support, tools/silent-parameter-reset, tools/model-version-drift, licensing/offline-activation
 <!-- appearances:end -->

@@ -7,8 +7,8 @@ group_name: 6. Documentation and Support
 level: project
 status: active
 definition: Someone outside the product team wrote their own guide to compensate for the official docs.
-highlights: 1
-participants: 1
+highlights: 5
+participants: 3
 counted: 2026-11-17
 project: 2026_demo-fluxbench
 ---

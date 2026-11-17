@@ -7,8 +7,8 @@ group_name: 6. Documentation and Support
 level: project
 status: active
 definition: Documentation is organised by feature while users search by symptom.
-highlights: 1
-participants: 1
+highlights: 2
+participants: 2
 counted: 2026-11-17
 project: 2026_demo-fluxbench
 ---

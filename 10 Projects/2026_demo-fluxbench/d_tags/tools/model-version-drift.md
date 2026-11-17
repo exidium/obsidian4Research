@@ -7,8 +7,8 @@ group_name: 2. Tool Behaviour
 level: project
 status: active
 definition: Results of an old design change because a part model was updated.
-highlights: 1
-participants: 1
+highlights: 7
+participants: 2
 counted: 2026-11-17
 project: 2026_demo-fluxbench
 ---

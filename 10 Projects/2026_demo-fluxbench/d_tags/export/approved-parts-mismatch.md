@@ -7,7 +7,7 @@ group_name: 7. Export and Handoff
 level: project
 status: active
 definition: BOM export suggests parts outside the company's approved vendor list.
-highlights: 1
+highlights: 3
 participants: 1
 counted: 2026-11-17
 project: 2026_demo-fluxbench

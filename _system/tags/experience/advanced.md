@@ -7,8 +7,8 @@ group_name: Experience level
 level: workspace
 status: active
 definition: Participant's words indicate expert depth (teaches others, deep domain reasoning, edge-case fluency).
-highlights: 2
-participants: 2
+highlights: 9
+participants: 3
 counted: 2026-11-17
 ---
 

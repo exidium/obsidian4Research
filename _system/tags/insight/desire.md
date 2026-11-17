@@ -7,8 +7,8 @@ group_name: Insight
 level: workspace
 status: active
 definition: Aspiration or wish; softer and more emotional than a feature request.
-highlights: 4
-participants: 2
+highlights: 16
+participants: 3
 counted: 2026-11-17
 ---
 

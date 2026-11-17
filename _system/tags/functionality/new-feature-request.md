@@ -7,7 +7,7 @@ group_name: Functionality
 level: workspace
 status: active
 definition: Participant explicitly asks for something that does not exist.
-highlights: 8
+highlights: 30
 participants: 3
 counted: 2026-11-17
 ---

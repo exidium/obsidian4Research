@@ -7,8 +7,8 @@ group_name: Experience level
 level: workspace
 status: active
 definition: Participant's words indicate newness to the domain or tool (learning, first encounter, unfamiliarity).
-highlights: 0
-participants: 0
+highlights: 3
+participants: 2
 counted: 2026-11-17
 ---
 

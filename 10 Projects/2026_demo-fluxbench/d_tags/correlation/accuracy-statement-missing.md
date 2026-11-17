@@ -7,8 +7,8 @@ group_name: 3. Simulation vs Bench
 level: project
 status: active
 definition: Participant wants the vendor to state how accurate a result is meant to be.
-highlights: 2
-participants: 1
+highlights: 9
+participants: 2
 counted: 2026-11-17
 project: 2026_demo-fluxbench
 ---

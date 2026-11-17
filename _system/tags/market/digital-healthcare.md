@@ -7,8 +7,8 @@ group_name: Market
 level: workspace
 status: active
 definition: Medical or healthcare tech context.
-highlights: 2
-participants: 1
+highlights: 6
+participants: 2
 counted: 2026-11-17
 ---
 

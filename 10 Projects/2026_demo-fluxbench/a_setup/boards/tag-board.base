@@ -21,6 +21,7 @@ formulas:
   docs: 'note.tags.filter(value.startsWith("docs/")).join(", ")'
   export: 'note.tags.filter(value.startsWith("export/")).join(", ")'
   selection: 'note.tags.filter(value.startsWith("selection/")).join(", ")'
+  competition: 'note.tags.filter(value.startsWith("competition/")).join(", ")'
 views:
   - type: kanban
     name: "Experience level"
@@ -239,6 +240,20 @@ views:
         - note.review != "rejected"
     groupBy:
       property: formula.selection
+      direction: ASC
+    order:
+      - file.name
+      - note.quote
+      - note.participant
+      - note.review
+      - note.tags
+  - type: kanban
+    name: "9. Competition"
+    filters:
+      and:
+        - note.review != "rejected"
+    groupBy:
+      property: formula.competition
       direction: ASC
     order:
       - file.name

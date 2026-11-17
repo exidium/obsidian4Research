@@ -7,7 +7,7 @@ group_name: 4. Sharing and Versions
 level: project
 status: active
 definition: Support happens via screenshots because the design itself cannot be shared.
-highlights: 2
+highlights: 3
 participants: 1
 counted: 2026-11-17
 project: 2026_demo-fluxbench

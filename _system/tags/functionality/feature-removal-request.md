@@ -7,8 +7,8 @@ group_name: Functionality
 level: workspace
 status: active
 definition: Participant wants something taken away or simplified.
-highlights: 0
-participants: 0
+highlights: 1
+participants: 1
 counted: 2026-11-17
 ---
 

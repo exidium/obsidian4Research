@@ -7,7 +7,7 @@ group_name: 5. Licensing and Offline
 level: project
 status: active
 definition: The tool locked the user out because a license check failed.
-highlights: 1
+highlights: 3
 participants: 1
 counted: 2026-11-17
 project: 2026_demo-fluxbench

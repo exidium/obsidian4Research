@@ -7,7 +7,7 @@ group_name: 2. Tool Behaviour
 level: project
 status: active
 definition: The application closes or fails during a run.
-highlights: 1
+highlights: 2
 participants: 1
 counted: 2026-11-17
 project: 2026_demo-fluxbench

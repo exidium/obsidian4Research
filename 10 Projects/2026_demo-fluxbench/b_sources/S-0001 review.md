@@ -1,11 +1,12 @@
 ---
 type: review
-source: "[[S-0001]]"
+source: '[[S-0001]]'
 project: 2026_demo-fluxbench
 blocks: s0001-0031 to s0001-0149
 proposals: 25
-status: pending
+status: implemented
 created: 2026-11-17
+implemented: 2026-11-17
 ---
 
 # Review: S-0001, blocks ^s0001-0031 to ^s0001-0149

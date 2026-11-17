@@ -7,8 +7,8 @@ group_name: Journey stage
 level: workspace
 status: active
 definition: Comparing options, reading datasheets, trying eval boards, deciding what to adopt.
-highlights: 2
-participants: 1
+highlights: 9
+participants: 3
 counted: 2026-11-17
 ---
 

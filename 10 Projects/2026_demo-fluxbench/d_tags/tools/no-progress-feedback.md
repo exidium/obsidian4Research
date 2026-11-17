@@ -7,7 +7,7 @@ group_name: 2. Tool Behaviour
 level: project
 status: active
 definition: Long runs give no progress indication or block the interface.
-highlights: 1
+highlights: 4
 participants: 1
 counted: 2026-11-17
 project: 2026_demo-fluxbench

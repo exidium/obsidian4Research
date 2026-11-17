@@ -7,7 +7,7 @@ group_name: Sentiment
 level: workspace
 status: active
 definition: Frustration, disappointment, or criticism expressed.
-highlights: 20
+highlights: 60
 participants: 3
 counted: 2026-11-17
 ---

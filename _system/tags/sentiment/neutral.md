@@ -7,7 +7,7 @@ group_name: Sentiment
 level: workspace
 status: active
 definition: Factual statement with no emotional charge (typical for workflow descriptions).
-highlights: 12
+highlights: 44
 participants: 3
 counted: 2026-11-17
 ---

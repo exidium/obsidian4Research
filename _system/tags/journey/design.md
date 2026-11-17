@@ -7,7 +7,7 @@ group_name: Journey stage
 level: workspace
 status: active
 definition: Active design work; architecture, selection, configuration, simulation.
-highlights: 8
+highlights: 25
 participants: 3
 counted: 2026-11-17
 ---

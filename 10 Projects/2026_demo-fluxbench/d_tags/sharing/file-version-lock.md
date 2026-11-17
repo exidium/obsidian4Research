@@ -7,7 +7,7 @@ group_name: 4. Sharing and Versions
 level: project
 status: active
 definition: Project files cannot be opened across tool versions.
-highlights: 2
+highlights: 6
 participants: 1
 counted: 2026-11-17
 project: 2026_demo-fluxbench

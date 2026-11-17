@@ -7,7 +7,7 @@ group_name: Insight
 level: workspace
 status: active
 definition: Any moment of frustration, friction, or failure.
-highlights: 23
+highlights: 72
 participants: 3
 counted: 2026-11-17
 ---

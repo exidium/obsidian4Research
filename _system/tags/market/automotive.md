@@ -7,8 +7,8 @@ group_name: Market
 level: workspace
 status: active
 definition: Automotive context.
-highlights: 0
-participants: 0
+highlights: 2
+participants: 1
 counted: 2026-11-17
 ---
 

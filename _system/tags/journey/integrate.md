@@ -7,7 +7,7 @@ group_name: Journey stage
 level: workspace
 status: active
 definition: Moving work between tools or into the production flow; exports, handoffs.
-highlights: 7
+highlights: 18
 participants: 3
 counted: 2026-11-17
 ---

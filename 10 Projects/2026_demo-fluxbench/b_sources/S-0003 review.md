@@ -1,11 +1,12 @@
 ---
 type: review
-source: "[[S-0003]]"
+source: '[[S-0003]]'
 project: 2026_demo-fluxbench
 blocks: s0003-0029 to s0003-0175
 proposals: 25
-status: pending
+status: implemented
 created: 2026-11-17
+implemented: 2026-11-17
 ---
 
 # Review: S-0003 (P-003, validation engineer, medical devices), blocks 0029 to 0175

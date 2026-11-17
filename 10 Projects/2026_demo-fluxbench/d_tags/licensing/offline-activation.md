@@ -7,8 +7,8 @@ group_name: 5. Licensing and Offline
 level: project
 status: active
 definition: Activation or check-in needs network access the user does not have.
-highlights: 2
-participants: 2
+highlights: 9
+participants: 3
 counted: 2026-11-17
 project: 2026_demo-fluxbench
 ---

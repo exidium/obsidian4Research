@@ -99,6 +99,9 @@ Lanes are the group's tags. Native Bases, no plugin needed. To re-tag by draggin
 >
 > - `workflow/workflow-described` · Participant describes how they actually do a step of their work.
 > - `workflow/review-loop-described` · Participant describes how a design gets reviewed and iterated with colleagues.
+> - `workflow/tool-for-shopping-only` · FluxBench is used only to pick the part and get a first schematic; the real design is done in a spreadsheet or another tool trusted to reopen.
+> - `workflow/no-owner-for-wrong-number` · Causes of a wrong result are split across tool, model and eval-kit teams; no role owns the customer's 'the number was wrong', so the FAE absorbs it.
+> - `workflow/quality-system-constraint` · A rule of the participant's quality system (acceptance limit, controlled document, software assessment, audit) that governs whether a simulated value may count as evidence.
 
 > [!abstract]- 2. Tool Behaviour
 > ![[10 Projects/2026_demo-fluxbench/a_setup/boards/tag-board.base#2. Tool Behaviour]]
@@ -109,6 +112,7 @@ Lanes are the group's tags. Native Bases, no plugin needed. To re-tag by draggin
 > - `tools/simulation-crash` · The application closes or fails during a run.
 > - `tools/no-progress-feedback` · Long runs give no progress indication or block the interface.
 > - `tools/design-history-missing` · No record inside the project of what changed and when.
+> - `tools/result-reproducibility` · A qualified design cannot reproduce its earlier numbers because model updates are one-way; customers freeze installs (VMs, old laptops) for audits.
 
 > [!abstract]- 3. Simulation vs Bench
 > ![[10 Projects/2026_demo-fluxbench/a_setup/boards/tag-board.base#3. Simulation vs Bench]]
@@ -118,6 +122,7 @@ Lanes are the group's tags. Native Bases, no plugin needed. To re-tag by draggin
 > - `correlation/accuracy-statement-missing` · Participant wants the vendor to state how accurate a result is meant to be.
 > - `correlation/loss-breakdown-missing` · Results are aggregated in a way that blocks diagnosing which mechanism is off.
 > - `correlation/thermal-correlated` · The thermal estimate matched hardware; apply to positive correlation moments.
+> - `correlation/trust-per-result` · Trust is granted to one result type after it matched hardware and does not transfer to the tool's other results.
 
 > [!abstract]- 4. Sharing and Versions
 > ![[10 Projects/2026_demo-fluxbench/a_setup/boards/tag-board.base#4. Sharing and Versions]]
@@ -126,12 +131,14 @@ Lanes are the group's tags. Native Bases, no plugin needed. To re-tag by draggin
 > - `sharing/screenshot-support` · Support happens via screenshots because the design itself cannot be shared.
 > - `sharing/pdf-review-loop` · Design review runs on exported PDFs rather than the design.
 > - `sharing/design-fork` · Two people hold divergent copies of a design with no way to tell which is current.
+> - `sharing/reviewer-viewer-missing` · Reviewers and leads cannot open a design without a full licence; there is no read-only viewer or link.
 
 > [!abstract]- 5. Licensing and Offline
 > ![[10 Projects/2026_demo-fluxbench/a_setup/boards/tag-board.base#5. Licensing and Offline]]
 >
 > - `licensing/offline-activation` · Activation or check-in needs network access the user does not have.
 > - `licensing/license-lockout` · The tool locked the user out because a license check failed.
+> - `licensing/node-locked-seat` · The licence is bound to one machine and needs periodic check-ins; deactivation and moves need the vendor or internet access.
 
 > [!abstract]- 6. Documentation and Support
 > ![[10 Projects/2026_demo-fluxbench/a_setup/boards/tag-board.base#6. Documentation and Support]]
@@ -146,11 +153,19 @@ Lanes are the group's tags. Native Bases, no plugin needed. To re-tag by draggin
 > - `export/plot-data-not-exportable` · Plots export as images but the underlying numbers do not.
 > - `export/report-retyping` · Numbers are retyped by hand into reports because no data export exists.
 > - `export/approved-parts-mismatch` · BOM export suggests parts outside the company's approved vendor list.
+> - `export/revision-stamp-missing` · Exports (PDF, plots, BOM) carry no revision or version stamp, so a reviewed artefact can diverge from the built design without anyone noticing.
+> - `export/handoff-as-picture` · A value or result leaves the tool as a screenshot or PDF and has to be retyped by the next person (layout, firmware, purchasing).
+> - `export/scripting-interface-missing` · No command line, scripting or batch interface to drive simulation runs from the user's own automation.
 
 > [!abstract]- 8. Part Selection
 > ![[10 Projects/2026_demo-fluxbench/a_setup/boards/tag-board.base#8. Part Selection]]
 >
 > - `selection/part-finder-stock` · Part selection filtered by distributor stock; apply to selection moments.
+
+> [!abstract]- 9. Competition
+> ![[10 Projects/2026_demo-fluxbench/a_setup/boards/tag-board.base#9. Competition]]
+>
+> - `competition/competitor-comparison` · Participant compares FluxBench with another simulation tool on a named capability (change dialogue, plain files, scripting, part picker).
 
 ## Other views
 ![[10 Projects/2026_demo-fluxbench/a_setup/boards/tag-board.base#By participant]]

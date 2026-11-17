@@ -7,8 +7,8 @@ group_name: Journey stage
 level: workspace
 status: active
 definition: Testing on hardware, correlating, signing off.
-highlights: 8
-participants: 2
+highlights: 34
+participants: 3
 counted: 2026-11-17
 ---
 

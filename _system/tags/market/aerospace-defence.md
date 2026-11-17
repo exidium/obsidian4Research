@@ -7,8 +7,8 @@ group_name: Market
 level: workspace
 status: active
 definition: A&D context
-highlights: 0
-participants: 0
+highlights: 1
+participants: 1
 counted: 2026-11-17
 ---
 

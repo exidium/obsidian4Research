@@ -7,7 +7,7 @@ group_name: 3. Simulation vs Bench
 level: project
 status: active
 definition: The evaluation kit's actual parts differ from the simulation model's defaults.
-highlights: 3
+highlights: 5
 participants: 2
 counted: 2026-11-17
 project: 2026_demo-fluxbench

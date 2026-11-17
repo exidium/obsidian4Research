@@ -7,8 +7,8 @@ group_name: Functionality
 level: workspace
 status: active
 definition: Participant references something that already exists (use to validate awareness).
-highlights: 2
-participants: 1
+highlights: 4
+participants: 2
 counted: 2026-11-17
 ---
 

@@ -7,8 +7,8 @@ group_name: 3. Simulation vs Bench
 level: project
 status: active
 definition: The thermal estimate matched hardware; apply to positive correlation moments.
-highlights: 1
-participants: 1
+highlights: 4
+participants: 3
 counted: 2026-11-17
 project: 2026_demo-fluxbench
 ---

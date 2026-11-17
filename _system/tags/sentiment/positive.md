@@ -7,8 +7,8 @@ group_name: Sentiment
 level: workspace
 status: active
 definition: Clear satisfaction, praise, or delight expressed.
-highlights: 2
-participants: 1
+highlights: 4
+participants: 2
 counted: 2026-11-17
 ---
 

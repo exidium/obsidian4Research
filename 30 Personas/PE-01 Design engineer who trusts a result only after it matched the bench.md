@@ -9,7 +9,7 @@ participant_type: external-customer
 markets: [market/industrial-automation]
 participants: [P-001]
 projects: [2026_demo-fluxbench]
-evidence_highlights: 11
+evidence_highlights: 36
 created: 2026-11-17
 updated: 2026-11-17
 insights: 6
@@ -59,7 +59,7 @@ Ask for the last disagreement between the tool and their own reference, and what
 - [[I-2026_demo-fluxbench-06 Exports serve presentation, not analysis pictures come out, the|I-2026_demo-fluxbench-06]] Exports serve presentation, not analysis: pictures come out, the numbers behind them don't · 1 of their highlights · emerging
 - [[I-2026_demo-fluxbench-07 Long simulations block the interface or crash, and users adapt by|I-2026_demo-fluxbench-07]] Long simulations block the interface or crash, and users adapt by saving first and waiting · 1 of their highlights · emerging
 
-**Highlights (11)**
+**Highlights (36)**
 - [[H-S0001-0001 Activation blocked on the lab network|H-S0001-0001]] Activation blocked on the lab network · insight/pain-point, sentiment/negative, journey/discover, software/fluxbench-designer, licensing/offline-activation
 - [[H-S0001-0002 Stock-aware part picker beats the spreadsheet|H-S0001-0002]] Stock-aware part picker beats the spreadsheet · functionality/existing-feature, sentiment/positive, journey/design, software/fluxbench-designer, selection/part-finder-stock
 - [[H-S0001-0003 Spreadsheet wins when tool and spreadsheet disagree|H-S0001-0003]] Spreadsheet wins when tool and spreadsheet disagree · insight/pain-point, functionality/workaround, sentiment/negative, journey/design, correlation/sim-vs-bench-gap
@@ -71,4 +71,29 @@ Ask for the last disagreement between the tool and their own reference, and what
 - [[H-S0001-0009 Thermal estimate matched the first prototype|H-S0001-0009]] Thermal estimate matched the first prototype · functionality/existing-feature, sentiment/positive, journey/validate, correlation/thermal-correlated
 - [[H-S0001-0010 Trust is correlation|H-S0001-0010]] Trust is correlation · sentiment/neutral, journey/validate, experience/advanced, correlation/sim-vs-bench-gap
 - [[H-S0001-0011 No design history in the project file|H-S0001-0011]] No design history in the project file · insight/pain-point, sentiment/negative, journey/design, tools/design-history-missing
+- [[H-S0001-0012 Reviewer wants both numbers side by side|H-S0001-0012]] Reviewer wants both numbers side by side · insight/pain-point, sentiment/negative, journey/integrate, workflow/review-loop-described, correlation/sim-vs-bench-gap
+- [[H-S0001-0013 Sign-off is on the document, not the design|H-S0001-0013]] Sign-off is on the document, not the design · insight/pain-point, sentiment/neutral, journey/integrate, sharing/pdf-review-loop, workflow/review-loop-described, sharing/reviewer-viewer-missing
+- [[H-S0001-0014 Revision stamp and a read-only reviewer view|H-S0001-0014]] Revision stamp and a read-only reviewer view · functionality/new-feature-request, insight/desire, sentiment/neutral, journey/integrate, sharing/pdf-review-loop, export/revision-stamp-missing, sharing/reviewer-viewer-missing
+- [[H-S0001-0015 Schematic retyped into CAD by hand|H-S0001-0015]] Schematic retyped into CAD by hand · insight/pain-point, functionality/workaround, sentiment/negative, journey/integrate, export/handoff-as-picture
+- [[H-S0001-0016 Thermal within three degrees, the only agreeing table|H-S0001-0016]] Thermal within three degrees, the only agreeing table · functionality/existing-feature, sentiment/positive, journey/validate, correlation/thermal-correlated
+- [[H-S0001-0017 Everything leaves the tool as a picture|H-S0001-0017]] Everything leaves the tool as a picture · insight/pain-point, functionality/new-feature-request, sentiment/negative, journey/integrate, export/handoff-as-picture
+- [[H-S0001-0018 One-page results table built by hand|H-S0001-0018]] One-page results table built by hand · functionality/new-feature-request, insight/pain-point, sentiment/negative, journey/integrate, export/report-retyping
+- [[H-S0001-0019 Six people watched the sweep hang|H-S0001-0019]] Six people watched the sweep hang · insight/pain-point, sentiment/negative, journey/integrate, tools/no-progress-feedback, sharing/pdf-review-loop
+- [[H-S0001-0020 Internal gotchas wiki beats vendor docs|H-S0001-0020]] Internal gotchas wiki beats vendor docs · functionality/workaround, insight/pain-point, sentiment/negative, journey/support, docs/shadow-docs, docs/feature-vs-symptom-docs
+- [[H-S0001-0021 Vendor forum known for two years, by design|H-S0001-0021]] Vendor forum: known for two years, by design · insight/pain-point, sentiment/negative, journey/support, tools/silent-parameter-reset
+- [[H-S0001-0022 Offline activation is enterprise-only|H-S0001-0022]] Offline activation is enterprise-only · insight/pain-point, sentiment/negative, journey/support, licensing/offline-activation
+- [[H-S0001-0023 Never reported the feedback channel is a nod|H-S0001-0023]] Never reported: the feedback channel is a nod · insight/pain-point, sentiment/negative, journey/support, docs/no-defect-channel
+- [[H-S0001-0024 Competitor shows a keep-or-reset dialogue|H-S0001-0024]] Competitor shows a keep-or-reset dialogue · insight/desire, sentiment/neutral, journey/evaluate, tools/silent-parameter-reset, competition/competitor-comparison
+- [[H-S0001-0025 Forty-point sweep default, twelve is enough|H-S0001-0025]] Forty-point sweep default, twelve is enough · functionality/workaround, insight/pain-point, sentiment/negative, journey/design, tools/hidden-defaults, tools/no-progress-feedback
+- [[H-S0001-0026 Node lock keeps the tool off the lab bench|H-S0001-0026]] Node lock keeps the tool off the lab bench · insight/pain-point, sentiment/negative, journey/validate, licensing/offline-activation, licensing/node-locked-seat
+- [[H-S0001-0027 Home-made lookup table covers seventy percent of the BOM|H-S0001-0027]] Home-made lookup table covers seventy percent of the BOM · functionality/workaround, functionality/new-feature-request, insight/pain-point, sentiment/neutral, journey/integrate, export/approved-parts-mismatch
+- [[H-S0001-0028 Raw plot data to overlay with the scope|H-S0001-0028]] Raw plot data to overlay with the scope · functionality/new-feature-request, insight/desire, sentiment/neutral, journey/validate, export/plot-data-not-exportable, correlation/sim-vs-bench-gap
+- [[H-S0001-0029 Trust fixes would double the seats|H-S0001-0029]] Trust fixes would double the seats · insight/desire, sentiment/neutral, journey/evaluate, tools/silent-parameter-reset, sharing/reviewer-viewer-missing, export/revision-stamp-missing
+- [[H-S0001-0030 Lost hours are invisible to the manager|H-S0001-0030]] Lost hours are invisible to the manager · insight/pain-point, sentiment/negative, journey/evaluate, ops/follow-up-depth
+- [[H-S0001-0031 Top five wishes, what-changed panel first|H-S0001-0031]] Top five wishes, what-changed panel first · functionality/new-feature-request, insight/desire, sentiment/neutral, journey/design, tools/silent-parameter-reset, export/approved-parts-mismatch, export/plot-data-not-exportable, tools/design-history-missing, tools/no-progress-feedback, licensing/offline-activation, export/revision-stamp-missing, sharing/reviewer-viewer-missing
+- [[H-S0001-0032 One missing banner broke trust|H-S0001-0032]] One missing banner broke trust · insight/pain-point, functionality/new-feature-request, sentiment/negative, journey/design, tools/silent-parameter-reset
+- [[H-S0001-0033 Trust does not generalise across results|H-S0001-0033]] Trust does not generalise across results · insight/pain-point, sentiment/neutral, journey/validate, experience/advanced, correlation/trust-per-result
+- [[H-S0001-0034 Defensive use with a seven-item checklist|H-S0001-0034]] Defensive use with a seven-item checklist · functionality/workaround, sentiment/neutral, journey/design, tools/hidden-defaults, workflow/workflow-described
+- [[H-S0001-0035 Spreadsheet trusted by habit, not rigour|H-S0001-0035]] Spreadsheet trusted by habit, not rigour · sentiment/neutral, journey/validate, experience/advanced, tools/hidden-defaults
+- [[H-S0001-0036 Tool ignores derating rules|H-S0001-0036]] Tool ignores derating rules · functionality/new-feature-request, insight/pain-point, sentiment/negative, journey/design
 <!-- appearances:end -->

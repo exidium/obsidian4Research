@@ -7,8 +7,8 @@ group_name: 3. Simulation vs Bench
 level: project
 status: active
 definition: Participant compares a simulated value with a measurement or a trusted calculation and reports a gap.
-highlights: 4
-participants: 2
+highlights: 11
+participants: 3
 counted: 2026-11-17
 project: 2026_demo-fluxbench
 ---

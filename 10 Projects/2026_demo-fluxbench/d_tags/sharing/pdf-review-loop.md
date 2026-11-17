@@ -7,8 +7,8 @@ group_name: 4. Sharing and Versions
 level: project
 status: active
 definition: Design review runs on exported PDFs rather than the design.
-highlights: 1
-participants: 1
+highlights: 5
+participants: 2
 counted: 2026-11-17
 project: 2026_demo-fluxbench
 ---

@@ -7,7 +7,7 @@ group_name: Functionality
 level: workspace
 status: active
 definition: Participant describes a hack or alternative path to achieve their goal. Direct evidence of unmet need.
-highlights: 7
+highlights: 17
 participants: 3
 counted: 2026-11-17
 ---

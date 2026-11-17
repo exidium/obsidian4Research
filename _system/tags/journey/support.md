@@ -7,8 +7,8 @@ group_name: Journey stage
 level: workspace
 status: active
 definition: Getting help; documentation, FAEs, portals, reporting problems.
-highlights: 9
-participants: 2
+highlights: 23
+participants: 3
 counted: 2026-11-17
 ---
 

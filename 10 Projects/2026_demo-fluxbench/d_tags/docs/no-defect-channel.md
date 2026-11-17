@@ -7,8 +7,8 @@ group_name: 6. Documentation and Support
 level: project
 status: active
 definition: No practical way to report a bug from inside the tool.
-highlights: 1
-participants: 1
+highlights: 3
+participants: 2
 counted: 2026-11-17
 project: 2026_demo-fluxbench
 ---

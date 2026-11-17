@@ -7,8 +7,8 @@ group_name: Research ops
 level: workspace
 status: active
 definition: This topic needs deeper probing in a future session.
-highlights: 1
-participants: 1
+highlights: 3
+participants: 2
 counted: 2026-11-17
 ---
 

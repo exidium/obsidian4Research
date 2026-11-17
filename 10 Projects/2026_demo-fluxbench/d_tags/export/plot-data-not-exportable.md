@@ -7,8 +7,8 @@ group_name: 7. Export and Handoff
 level: project
 status: active
 definition: Plots export as images but the underlying numbers do not.
-highlights: 2
-participants: 1
+highlights: 8
+participants: 2
 counted: 2026-11-17
 project: 2026_demo-fluxbench
 ---

@@ -7,8 +7,8 @@ group_name: 7. Export and Handoff
 level: project
 status: active
 definition: Numbers are retyped by hand into reports because no data export exists.
-highlights: 1
-participants: 1
+highlights: 3
+participants: 2
 counted: 2026-11-17
 project: 2026_demo-fluxbench
 ---

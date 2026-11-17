@@ -7,8 +7,8 @@ group_name: 1. Workflow and Process
 level: project
 status: active
 definition: Participant describes how a design gets reviewed and iterated with colleagues.
-highlights: 1
-participants: 1
+highlights: 4
+participants: 2
 counted: 2026-11-17
 project: 2026_demo-fluxbench
 ---

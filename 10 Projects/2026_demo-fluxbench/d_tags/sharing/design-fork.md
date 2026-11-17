@@ -7,7 +7,7 @@ group_name: 4. Sharing and Versions
 level: project
 status: active
 definition: Two people hold divergent copies of a design with no way to tell which is current.
-highlights: 1
+highlights: 2
 participants: 1
 counted: 2026-11-17
 project: 2026_demo-fluxbench

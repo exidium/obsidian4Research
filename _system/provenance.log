@@ -84,3 +84,6 @@ date	skill	action	target	model
 2026-11-17T17:38:53Z	research-highlight	review	S-0001	claude-fable-5-1
 2026-11-17T17:38:53Z	research-highlight	review	S-0002	claude-fable-5-1
 2026-11-17T17:38:53Z	research-highlight	review	S-0003	claude-fable-5-1
+2026-11-17T17:49:21Z	research-highlight	implement	S-0001	claude-fable-5-1
+2026-11-17T17:49:21Z	research-highlight	implement	S-0002	claude-fable-5-1
+2026-11-17T17:49:21Z	research-highlight	implement	S-0003	claude-fable-5-1

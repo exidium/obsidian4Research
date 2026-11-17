@@ -7,7 +7,7 @@ group_name: 2. Tool Behaviour
 level: project
 status: active
 definition: A parameter or assumption the tool applies without showing it on the main screens.
-highlights: 4
+highlights: 15
 participants: 3
 counted: 2026-11-17
 project: 2026_demo-fluxbench

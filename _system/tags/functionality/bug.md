@@ -7,7 +7,7 @@ group_name: Functionality
 level: workspace
 status: active
 definition: Participant describes broken behaviour (not a gap; actually broken).
-highlights: 3
+highlights: 4
 participants: 3
 counted: 2026-11-17
 ---

@@ -7,8 +7,8 @@ group_name: 2. Tool Behaviour
 level: project
 status: active
 definition: No record inside the project of what changed and when.
-highlights: 1
-participants: 1
+highlights: 6
+participants: 3
 counted: 2026-11-17
 project: 2026_demo-fluxbench
 ---

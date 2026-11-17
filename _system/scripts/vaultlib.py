@@ -5,7 +5,12 @@ from datetime import date
 from pathlib import Path
 import yaml
 
-NOTE_DIRS = ["10 Projects", "90 Archive"]
+NOTE_DIRS = ["10 Projects", "90 Archive", "20 Participants", "30 Personas"]
+# Project layout: lettered folders in reading order, numbered pages at the root.
+DIRS = {"setup": "a_setup", "sources": "b_sources", "highlights": "c_highlights", "tags": "d_tags", "insights": "e_insights", "deliverables": "f_deliverables"}
+BOARDS = "a_setup/boards"
+REFERENCE = "b_sources/reference"
+PAGES = {"project": "01 project", "review": "02 insights review", "tagboard": "03 tag board"}
 FM_RE = re.compile(r"\A---\n(.*?)\n---\n?", re.S)
 BLOCK_RE = re.compile(r"\^(s\d{4}-\d{4})\s*$", re.M)
 
@@ -81,12 +86,73 @@ def save_taxonomy(root: Path, tax: dict):
 
 
 def taxonomy_tags(tax: dict) -> dict:
-    """tag id -> tag dict (with 'dimension' added)."""
+    """tag id -> tag dict (with 'dimension' and level='workspace')."""
     out = {}
     for dim, spec in (tax.get("dimensions") or {}).items():
         for t in spec.get("tags") or []:
-            out[t["id"]] = {**t, "dimension": dim}
+            out[t["id"]] = {**t, "dimension": dim, "level": "workspace"}
     return out
+
+
+WORKSPACE_DIMS = ("experience", "functionality", "insight", "sentiment", "ops", "journey", "software", "market")
+
+
+def project_dir(root: Path, project: str) -> Path:
+    for d in NOTE_DIRS:
+        if (root / d / project).exists():
+            return root / d / project
+    sys.exit(f"project folder not found: {project}")
+
+
+def load_project_tags(root: Path, project: str) -> dict:
+    """Project tags/tags.yaml as a dict, or an empty structure if absent."""
+    f = project_dir(root, project) / DIRS["tags"] / "tags.yaml"
+    if not f.exists():
+        return {"project": project, "groups": []}
+    return yaml.safe_load(f.read_text(encoding="utf-8")) or {"project": project, "groups": []}
+
+
+def save_project_tags(root: Path, project: str, data: dict):
+    f = project_dir(root, project) / DIRS["tags"] / "tags.yaml"
+    f.parent.mkdir(exist_ok=True)
+    f.write_text(
+        yaml.dump(data, Dumper=_Dumper, sort_keys=False, default_flow_style=False, allow_unicode=True, width=1000), encoding="utf-8")
+
+
+def project_tag_index(ptags: dict) -> dict:
+    """tag id -> tag dict (with 'dimension'=group id and level='project')."""
+    out = {}
+    for g in ptags.get("groups") or []:
+        for t in g.get("tags") or []:
+            out[t["id"]] = {**t, "dimension": g["id"], "group": g.get("name", g["id"]), "level": "project"}
+    return out
+
+
+def all_tags(root: Path, project: str | None = None) -> dict:
+    tags = taxonomy_tags(load_taxonomy(root))
+    if project:
+        tags.update(project_tag_index(load_project_tags(root, project)))
+    return tags
+
+
+def find_by_id(root: Path, project: str, kind: str, note_id: str) -> Path | None:
+    """Locate a highlight/insight file whose name starts with its ID (title may follow)."""
+    folder = project_dir(root, project) / DIRS["highlights" if kind == "highlight" else "insights"]
+    hits = sorted(folder.glob(f"{note_id}*.md"))
+    return hits[0] if hits else None
+
+
+def id_from_name(name: str) -> str:
+    return name.split(" ")[0]
+
+
+def safe_title(title: str, limit: int = 70) -> str:
+    """Filename-safe version of a title (Obsidian forbids these characters), cut at a word boundary."""
+    t = re.sub(r'[\\/:*?"<>|#^\[\]]', "", title).strip()
+    if len(t) <= limit:
+        return t
+    cut = t[:limit].rsplit(" ", 1)[0]
+    return cut.rstrip(",;:- ")
 
 
 def blocks_in(body: str) -> dict:

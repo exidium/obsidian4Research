@@ -2,11 +2,13 @@
 """Build a source note (transcript with stable block IDs) from a transcript file.
 
 Accepts: Whisper JSON (mlx_whisper --output-format json), .srt, .vtt (incl. Teams <v Name>),
-or plain .txt/.md with "Speaker: text" paragraphs and optional leading [hh:mm:ss].
+Dovetail markdown export ("**Name (m:ss):** text"), or plain .txt/.md with "Speaker: text"
+paragraphs and optional leading [hh:mm:ss].
 
   build_source.py --input FILE --project 2026_demo-fluxbench --participant P-001 \
-      [--source-id S-0004] [--date 2026-10-14] [--method method/interview] [--rally-id X] \
-      [--title "Interview P-001"] [--language en] [--origin _raw/...] [--transcriber mlx-whisper/large-v3-turbo] \
+      [--source-id S-0004] [--date 2026-10-14] [--entry-type interview] [--methodology user-interview] \
+      [--participant-type external-customer] [--role "RF engineer"] [--interviewer P-000] [--rally-id X] \
+      [--title "[Interview] P-001 - 14 Oct 2026"] [--language en] [--origin _raw/...] [--transcriber mlx-whisper/large-v3-turbo] \
       [--speaker-map "Jane Doe=P-001,Moderator=Interviewer"] [--gap 2.0] [--max-chars 700]
 
 Names in speaker labels that are not mapped are replaced by Speaker-1, Speaker-2 … and reported,
@@ -16,7 +18,7 @@ import argparse, json, re, subprocess, sys
 from datetime import date
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
-from vaultlib import vault_root, write_note
+from vaultlib import vault_root, write_note, DIRS
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--input", required=True)
@@ -24,7 +26,11 @@ ap.add_argument("--project", required=True)
 ap.add_argument("--participant", required=True)
 ap.add_argument("--source-id")
 ap.add_argument("--date", default=str(date.today()))
-ap.add_argument("--method", default="method/interview")
+ap.add_argument("--entry-type", default="interview", choices=["interview","workshop","feedback","survey","test","observation","demo","diary"])
+ap.add_argument("--methodology", default="user-interview", choices=["user-interview","usability-test","workshop","survey","guerilla-testing","demo","card-sorting","diary-study"])
+ap.add_argument("--participant-type", default="external-customer", choices=["external-customer","internal-stakeholder","internal-engineer"])
+ap.add_argument("--role", default="")
+ap.add_argument("--interviewer", default="P-000")
 ap.add_argument("--rally-id", default="")
 ap.add_argument("--title")
 ap.add_argument("--language", default="en")
@@ -48,7 +54,7 @@ smap = {}
 for pair in filter(None, a.speaker_map.split(",")):
     k, v = pair.split("=", 1)
     smap[k.strip().lower()] = v.strip()
-SAFE = re.compile(r"^(interviewer|moderator|facilitator|observer|p-\d{3}|speaker-\d+)$", re.I)
+SAFE = re.compile(r"^(interviewer|moderator|facilitator|observer|note|p-\d{3}|speaker-\d+)$", re.I)
 unmapped = {}
 
 def map_speaker(name):
@@ -95,6 +101,24 @@ elif src.suffix.lower() in (".srt", ".vtt"):
             if m:
                 spk, text = m.group(1), m.group(2)
         cues.append((start, end, spk, text.strip()))
+elif re.search(r"^\*\*[^*]+ \(\d+:\d{2}(?::\d{2})?\):\*\* ", raw, re.M):   # Dovetail export (line-based)
+    SPK = re.compile(r"^\*\*(.+?) \((\d+):(\d{2})(?::(\d{2}))?\):\*\*\s*(.*)")
+    NOTE = re.compile(r"^\*\*Unknown speaker:\*\*\s*(.*)")
+    for line in raw.splitlines():
+        line = line.strip()
+        if not line or line.startswith(("[AudioVideo", "#### Transcript", "[Audio", "[Video")):
+            continue
+        m = SPK.match(line)
+        if m:
+            h, mi, se = (int(m.group(2)), int(m.group(3)), int(m.group(4))) if m.group(4) else (0, int(m.group(2)), int(m.group(3)))
+            cues.append([h * 3600 + mi * 60 + se, None, m.group(1), m.group(5).strip()]); continue
+        m = NOTE.match(line)
+        if m:
+            cues.append([None, None, "Note", m.group(1).strip().replace("\\[", "[").replace("\\]", "]")]); continue
+        if cues:
+            cues[-1][3] = (cues[-1][3] + " " + line).strip()      # continuation line of the previous turn
+        else:
+            cues.append([None, None, None, line])
 else:
     for para in re.split(r"\n\s*\n", raw.strip()):
         text = " ".join(l.strip() for l in para.splitlines())
@@ -131,15 +155,19 @@ duration = a.duration_min
 if duration is None and paras and paras[-1][3]:
     duration = int(round(paras[-1][3] / 60))
 
+from datetime import date as _d
+pretty = _d.fromisoformat(a.date).strftime("%d %b %Y")
 fm = {
     "type": "source", "source_id": sid, "project": a.project,
-    "title": a.title or f"{a.method.split('/')[-1].capitalize()} {a.participant}",
-    "participant": a.participant, "rally_id": a.rally_id, "method": a.method, "date": a.date,
+    "title": a.title or f"[{a.entry_type.capitalize()}] {a.participant} - {pretty}",
+    "entry_type": a.entry_type, "methodology": a.methodology,
+    "participant": a.participant, "participant_type": a.participant_type, "role": a.role, "software_used": [],
+    "interviewer": a.interviewer, "rally_id": a.rally_id, "date": a.date,
     "duration_min": duration, "language": a.language, "origin": a.origin or str(src),
-    "transcriber": a.transcriber, "speakers_inferred": False, "redacted": False, "status": "ingested",
+    "transcriber": a.transcriber, "speakers_inferred": False, "redacted": False, "ris_status": "raw",
 }
 body = f"\n## Summary\n-\n\n## Transcript\n{transcript}\n"
-out = proj_dir / "sources" / f"{sid}.md"
+out = proj_dir / DIRS["sources"] / f"{sid}.md"
 if a.dry_run:
     print(body[:1500]); sys.exit()
 out.parent.mkdir(parents=True, exist_ok=True)

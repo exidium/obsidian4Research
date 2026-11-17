@@ -1,0 +1,12 @@
+project: {{project_id}}
+notes: Project tags add domain precision on top of workspace tags. Number the groups so they display in a consistent order. Every tag needs a definition that says when to apply it and when not to. Group ids must not reuse workspace dimension names (experience, functionality, insight, sentiment, ops, journey, software, market).
+groups:
+  - id: workflow
+    name: "1. Workflow and Process"
+    tags:
+      - id: workflow/workflow-described
+        definition: Participant describes how they actually do a step of their work, as opposed to how we assume they do it.
+        status: active
+  - id: tools
+    name: "2. Tool Usage and Evaluation"
+    tags: []

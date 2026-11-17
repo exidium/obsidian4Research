@@ -1,0 +1,43 @@
+---
+type: tag
+tag: journey/integrate
+aliases: [journey/integrate]
+group: journey
+group_name: Journey stage
+level: workspace
+status: active
+definition: Moving work between tools or into the production flow; exports, handoffs.
+highlights: 7
+participants: 3
+counted: 2026-11-17
+---
+
+# journey/integrate
+
+> Moving work between tools or into the production flow; exports, handoffs.
+
+Group: **Journey stage** · workspace tag · status **active**
+Counts refresh when `tag_board.py` runs; the list below is live.
+
+```base
+filters:
+  and:
+    - note.type == "highlight"
+    - note.tags.contains("journey/integrate")
+    - note.review != "rejected"
+views:
+  - type: table
+    name: Highlights
+    groupBy:
+      property: note.project
+      direction: ASC
+    order:
+      - file.name
+      - note.participant
+      - note.review
+      - note.quote
+      - note.tags
+    sort:
+      - property: file.name
+        direction: ASC
+```

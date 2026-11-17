@@ -1,0 +1,48 @@
+# Review board for a project's highlights. Embed in project.md. Drag a card to another lane to set `review`;
+# the pending table's review cell is editable too. Rejected highlights stay in the vault, out of synthesis.
+filters:
+  and:
+    - note.type == "highlight"
+    - file.folder.startsWith(this.file.folder)
+views:
+  - type: kanban
+    name: Review board
+    groupBy:
+      property: note.review
+      direction: ASC
+    groupOrder:
+      - proposed
+      - accepted
+      - rejected
+    order:
+      - file.name
+      - note.quote
+      - note.participant
+      - note.tags
+  - type: table
+    name: Pending review
+    filters:
+      and:
+        - note.review == "proposed"
+    order:
+      - file.name
+      - note.review
+      - note.participant
+      - note.tags
+      - note.quote
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: Reviewed
+    filters:
+      and:
+        - note.review != "proposed"
+    order:
+      - file.name
+      - note.review
+      - note.participant
+      - note.tags
+    sort:
+      - property: note.review
+        direction: ASC

@@ -10,7 +10,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("project"); ap.add_argument("--accepted-only", action="store_true"); ap.add_argument("--tag")
 a = ap.parse_args()
 root = vault_root()
-print("id\tparticipant\tsegment\ttags\treview\tquote\twhy")
+print("id\ttitle\tparticipant\ttags\treview\tquote\trationale")
 n = 0
 for p, fm, body in iter_notes(root, "highlight"):
     if fm.get("project") != a.project: continue
@@ -19,9 +19,9 @@ for p, fm, body in iter_notes(root, "highlight"):
     if a.tag and a.tag not in tags: continue
     why = ""
     for line in body.splitlines():
-        if line.startswith("**Why it matters:**"):
-            why = line.replace("**Why it matters:**", "").strip()
+        if line.startswith("**Rationale:**"):
+            why = line.replace("**Rationale:**", "").strip()
     q = str(fm.get("quote", "")).replace("\t", " ").replace("\n", " ")
-    print(f"{fm.get('highlight_id')}\t{fm.get('participant')}\t{fm.get('segment','')}\t{', '.join(tags)}\t{fm.get('review')}\t{q}\t{why}")
+    print(f"{fm.get('highlight_id')}\t{fm.get('title','')}\t{fm.get('participant')}\t{', '.join(tags)}\t{fm.get('review')}\t{q}\t{why}")
     n += 1
 print(f"# {n} highlights", file=sys.stderr)

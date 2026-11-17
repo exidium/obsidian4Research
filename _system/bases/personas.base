@@ -1,0 +1,23 @@
+filters:
+  and:
+    - note.type == "persona"
+views:
+  - type: cards
+    name: Personas
+    order:
+      - file.name
+      - note.archetype
+      - note.participant_type
+      - note.markets
+      - note.participants
+      - note.status
+  - type: table
+    name: Table
+    order:
+      - file.name
+      - note.persona_id
+      - note.status
+      - note.participant_type
+      - note.markets
+      - note.participants
+      - note.projects

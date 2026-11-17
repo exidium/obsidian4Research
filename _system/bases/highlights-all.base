@@ -1,7 +1,168 @@
+# Vault-wide highlight board. One Kanban per workspace dimension; lanes = that dimension's tags.
+# Project tag groups differ per project: see each project's boards/tag-board.base.
 filters:
   and:
     - note.type == "highlight"
+formulas:
+  experience: 'note.tags.filter(value.startsWith("experience/")).join(", ")'
+  functionality: 'note.tags.filter(value.startsWith("functionality/")).join(", ")'
+  insight: 'note.tags.filter(value.startsWith("insight/")).join(", ")'
+  sentiment: 'note.tags.filter(value.startsWith("sentiment/")).join(", ")'
+  ops: 'note.tags.filter(value.startsWith("ops/")).join(", ")'
+  journey: 'note.tags.filter(value.startsWith("journey/")).join(", ")'
+  software: 'note.tags.filter(value.startsWith("software/")).join(", ")'
+  market: 'note.tags.filter(value.startsWith("market/")).join(", ")'
 views:
+  - type: kanban
+    name: "Experience level"
+    filters:
+      and:
+        - note.review != "rejected"
+    groupBy:
+      property: formula.experience
+      direction: ASC
+    order:
+      - file.name
+      - note.quote
+      - note.project
+      - note.participant
+      - note.review
+      - note.tags
+  - type: kanban
+    name: "Functionality"
+    filters:
+      and:
+        - note.review != "rejected"
+    groupBy:
+      property: formula.functionality
+      direction: ASC
+    order:
+      - file.name
+      - note.quote
+      - note.project
+      - note.participant
+      - note.review
+      - note.tags
+  - type: kanban
+    name: "Insight"
+    filters:
+      and:
+        - note.review != "rejected"
+    groupBy:
+      property: formula.insight
+      direction: ASC
+    order:
+      - file.name
+      - note.quote
+      - note.project
+      - note.participant
+      - note.review
+      - note.tags
+  - type: kanban
+    name: "Sentiment"
+    filters:
+      and:
+        - note.review != "rejected"
+    groupBy:
+      property: formula.sentiment
+      direction: ASC
+    order:
+      - file.name
+      - note.quote
+      - note.project
+      - note.participant
+      - note.review
+      - note.tags
+  - type: kanban
+    name: "Research ops"
+    filters:
+      and:
+        - note.review != "rejected"
+    groupBy:
+      property: formula.ops
+      direction: ASC
+    order:
+      - file.name
+      - note.quote
+      - note.project
+      - note.participant
+      - note.review
+      - note.tags
+  - type: kanban
+    name: "Journey stage"
+    filters:
+      and:
+        - note.review != "rejected"
+    groupBy:
+      property: formula.journey
+      direction: ASC
+    order:
+      - file.name
+      - note.quote
+      - note.project
+      - note.participant
+      - note.review
+      - note.tags
+  - type: kanban
+    name: "Software"
+    filters:
+      and:
+        - note.review != "rejected"
+    groupBy:
+      property: formula.software
+      direction: ASC
+    order:
+      - file.name
+      - note.quote
+      - note.project
+      - note.participant
+      - note.review
+      - note.tags
+  - type: kanban
+    name: "Market"
+    filters:
+      and:
+        - note.review != "rejected"
+    groupBy:
+      property: formula.market
+      direction: ASC
+    order:
+      - file.name
+      - note.quote
+      - note.project
+      - note.participant
+      - note.review
+      - note.tags
+  - type: kanban
+    name: "By project"
+    filters:
+      and:
+        - note.review != "rejected"
+    groupBy:
+      property: note.project
+      direction: ASC
+    order:
+      - file.name
+      - note.quote
+      - note.project
+      - note.participant
+      - note.review
+      - note.tags
+  - type: kanban
+    name: "By review status"
+    filters:
+      and:
+        - note.review != "rejected"
+    groupBy:
+      property: note.review
+      direction: ASC
+    order:
+      - file.name
+      - note.quote
+      - note.project
+      - note.participant
+      - note.review
+      - note.tags
   - type: table
     name: All highlights
     order:
@@ -17,15 +178,37 @@ views:
       - property: file.name
         direction: ASC
   - type: table
-    name: Pains
+    name: Pain points
     filters:
       and:
-        - note.tags.contains("theme/pain")
+        - note.tags.contains("insight/pain-point")
     order:
       - file.name
       - note.project
       - note.participant
       - note.quote
+  - type: table
+    name: Workarounds
+    filters:
+      and:
+        - note.tags.contains("functionality/workaround")
+    order:
+      - file.name
+      - note.project
+      - note.participant
+      - note.quote
+  - type: table
+    name: Follow-ups (research ops)
+    filters:
+      or:
+        - note.tags.contains("ops/follow-up-depth")
+        - note.tags.contains("ops/follow-up-clarification")
+        - note.tags.contains("ops/follow-up-referral")
+    order:
+      - file.name
+      - note.project
+      - note.participant
+      - note.tags
   - type: table
     name: Accepted only
     filters:

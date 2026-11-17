@@ -1,190 +1,135 @@
-version: 1
-updated: 2026-11-05
+version: 2
+updated: 2026-11-06
+source: "Mirrors the ADI SDP UX Research workspace tag boards (Confluence: Tag Reference, Research Tagging Governance). Workspace tags are admin-controlled: never add, rename, or deprecate here without the UXR team."
 rules:
-  - Tag form is dimension/slug, lowercase, kebab-case.
-  - Every highlight carries at least one theme tag and at least one behavior or topic tag.
-  - Segments are task-based (what the person is trying to do), never demographic.
-  - AI may add tags with status proposed. Only a human sets active or deprecated.
-  - Deprecated tags keep merged_into so migrate_tag.py can rewrite notes.
+  - Tag form is dimension/slug, lowercase, kebab-case. Dimension names here are reserved; project tag groups must not reuse them.
+  - Every highlight carries at least one workspace tag. Most carry 2-3 tags across different dimensions (e.g. insight + functionality + journey), plus project tags for domain precision.
+  - Tag what is being discussed, not who is discussing it (experience, market, software describe the content of the highlight).
+  - Priority when tagging - 1 existing workspace tag, 2 existing project tag, 3 leave untagged, 4 propose a new project tag (status proposed, researcher decides). AI never proposes workspace tags.
+  - Tags classify moments. Themes emerge from patterns across highlights; they are written as insights, not tags.
 dimensions:
-  product:
-    description: Which product or surface the evidence is about. Demo values are fictional.
-    required: false
+  experience:
+    board: "*Research (Global) / Experience Level"
+    description: The experience level being described in the moment, not the participant's profile.
     tags:
-      - id: product/fluxbench-designer
-        definition: The FluxBench Designer desktop application (fictional demo product).
+      - id: experience/beginner
+        definition: Participant's words indicate newness to the domain or tool (learning, first encounter, unfamiliarity).
         status: active
-        created: 2026-11-05
-      - id: product/eval-kit
-        definition: Physical evaluation boards and the firmware that ships with them.
+      - id: experience/intermediate
+        definition: Participant's words indicate working knowledge (competent use, some years of practice).
         status: active
-        created: 2026-11-05
-      - id: product/docs-portal
-        definition: Online datasheets, app notes, and reference designs.
+      - id: experience/advanced
+        definition: Participant's words indicate expert depth (teaches others, deep domain reasoning, edge-case fluency).
         status: active
-        created: 2026-11-05
-      - id: product/licensing
-        definition: Trial, activation, seats, and offline licensing.
-        status: active
-        created: 2026-11-05
-  method:
-    description: How the source was collected.
-    required: false
+  functionality:
+    board: "*Research (Global) / Functionality"
+    description: Separates missing from broken from unnecessary. Product managers filter by this first.
     tags:
-      - id: method/interview
-        definition: Semi-structured one-to-one interview.
+      - id: functionality/new-feature-request
+        definition: Participant explicitly asks for something that does not exist.
         status: active
-        created: 2026-11-05
-      - id: method/usability-test
-        definition: Task-based moderated or unmoderated test.
+      - id: functionality/existing-feature
+        definition: Participant references something that already exists (use to validate awareness).
         status: active
-        created: 2026-11-05
-      - id: method/contextual-inquiry
-        definition: Observation at the participant's own workplace or bench.
+      - id: functionality/feature-removal-request
+        definition: Participant wants something taken away or simplified.
         status: active
-        created: 2026-11-05
-      - id: method/survey
-        definition: Questionnaire, quantitative or open-ended.
+      - id: functionality/bug
+        definition: Participant describes broken behaviour (not a gap; actually broken).
         status: active
-        created: 2026-11-05
-      - id: method/workshop
-        definition: Group session, co-design, or mapping exercise.
+      - id: functionality/workaround
+        definition: Participant describes a hack or alternative path to achieve their goal. Direct evidence of unmet need.
         status: active
-        created: 2026-11-05
-  segment:
-    description: Task-based participant segment. What they are trying to accomplish, not their title.
-    required: false
+  insight:
+    board: "*Research (Global) / Insights"
+    description: High-level buckets for quick scanning. Usually paired with a functionality tag.
     tags:
-      - id: segment/designing-power-stage
-        definition: Selecting parts and topology for a new design.
+      - id: insight/pain-point
+        definition: Any moment of frustration, friction, or failure.
         status: active
-        created: 2026-11-05
-      - id: segment/validating-design
-        definition: Testing, correlating, and signing off a design on hardware.
+      - id: insight/desire
+        definition: Aspiration or wish; softer and more emotional than a feature request.
         status: active
-        created: 2026-11-05
-      - id: segment/supporting-customers
-        definition: Helping other engineers get a design working (FAE, support).
-        status: active
-        created: 2026-11-05
-      - id: segment/evaluating-tools
-        definition: Deciding whether to adopt or standardize on a tool.
-        status: active
-        created: 2026-11-05
-  behavior:
-    description: What the participant was doing when the evidence arose. The most retrieval-valuable dimension.
-    required: false
+  sentiment:
+    board: "*Research (Global) / Sentiment"
+    description: Enables positive vs negative counts per topic across projects.
     tags:
-      - id: behavior/configure
-        definition: Setting parameters, choosing components, building a design in the tool.
+      - id: sentiment/positive
+        definition: Clear satisfaction, praise, or delight expressed.
         status: active
-        created: 2026-11-05
-      - id: behavior/simulate
-        definition: Running or interpreting a simulation.
+      - id: sentiment/neutral
+        definition: Factual statement with no emotional charge (typical for workflow descriptions).
         status: active
-        created: 2026-11-05
-      - id: behavior/troubleshoot
-        definition: Diagnosing why something doesn't work or doesn't match.
+      - id: sentiment/negative
+        definition: Frustration, disappointment, or criticism expressed.
         status: active
-        created: 2026-11-05
-      - id: behavior/compare
-        definition: Weighing parts, tools, or results against each other.
+      - id: sentiment/confused
+        definition: Participant is uncertain, misunderstanding, or lost.
         status: active
-        created: 2026-11-05
-      - id: behavior/look-up
-        definition: Finding a datasheet, value, example, or answer.
-        status: active
-        created: 2026-11-05
-      - id: behavior/export
-        definition: "Getting data out: BOM, schematic, report, screenshots."
-        status: active
-        created: 2026-11-05
-      - id: behavior/share
-        definition: Handing a design or result to a colleague or customer.
-        status: active
-        created: 2026-11-05
-      - id: behavior/learn
-        definition: First use, onboarding, figuring out how a feature works.
-        status: active
-        created: 2026-11-05
-      - id: behavior/install
-        definition: Downloading, installing, activating, updating.
-        status: active
-        created: 2026-11-05
-  theme:
-    description: The kind of finding. Required on every highlight.
-    required: true
+  ops:
+    board: "*Research (Global) / Research Ops"
+    description: Action tracking for the research team. Not for analysis; hidden from stakeholder views.
     tags:
-      - id: theme/pain
-        definition: Something that blocked, slowed, or frustrated the participant.
-        examples: ["I gave up and did it in a spreadsheet"]
+      - id: ops/follow-up-depth
+        definition: This topic needs deeper probing in a future session.
         status: active
-        created: 2026-11-05
-      - id: theme/need
-        definition: An outcome the participant must achieve, stated or implied, regardless of tool.
+      - id: ops/follow-up-clarification
+        definition: Something was unclear; verify with the participant.
         status: active
-        created: 2026-11-05
-      - id: theme/workaround
-        definition: A method the participant uses to get around a limitation.
+      - id: ops/follow-up-referral
+        definition: Participant mentioned someone else we should talk to.
         status: active
-        created: 2026-11-05
-      - id: theme/delight
-        definition: Something that worked unexpectedly well or that they praised unprompted.
-        status: active
-        created: 2026-11-05
-      - id: theme/mental-model
-        definition: How the participant believes the system works, right or wrong.
-        status: active
-        created: 2026-11-05
-      - id: theme/request
-        definition: An explicit feature ask. Record it, but weigh it below needs and pains.
-        status: active
-        created: 2026-11-05
-      - id: theme/trust
-        definition: Confidence or doubt in results, data, or the vendor.
-        status: active
-        created: 2026-11-05
-      - id: theme/expectation-gap
-        definition: The tool behaved differently from what the participant assumed.
-        status: active
-        created: 2026-11-05
-  topic:
-    description: Domain subject. Add sparingly; prefer behavior and theme.
-    required: false
+  journey:
+    board: "*Journey Stage"
+    description: Where in the engineer's workflow the moment happens. UNVERIFIED LIST - confirm against the *Journey Stage board in Dovetail before relying on it.
     tags:
-      - id: topic/onboarding
-        definition: First-run experience, getting to a first useful result.
+      - id: journey/discover
+        definition: Finding out what exists; requirements, feasibility, first contact with a product or tool.
         status: active
-        created: 2026-11-05
-      - id: topic/accuracy
-        definition: Whether results match reality or expectations.
+      - id: journey/evaluate
+        definition: Comparing options, reading datasheets, trying eval boards, deciding what to adopt.
         status: active
-        created: 2026-11-05
-      - id: topic/hardware-correlation
-        definition: Matching simulation to measurements on the bench.
+      - id: journey/design
+        definition: Active design work; architecture, selection, configuration, simulation.
         status: active
-        created: 2026-11-05
-      - id: topic/performance
-        definition: Speed, responsiveness, crashes.
+      - id: journey/integrate
+        definition: Moving work between tools or into the production flow; exports, handoffs.
         status: active
-        created: 2026-11-05
-      - id: topic/bom
-        definition: Bill of materials, part availability, cost.
+      - id: journey/validate
+        definition: Testing on hardware, correlating, signing off.
         status: active
-        created: 2026-11-05
-      - id: topic/documentation
-        definition: Datasheets, app notes, in-tool help.
+      - id: journey/support
+        definition: Getting help; documentation, FAEs, portals, reporting problems.
         status: active
-        created: 2026-11-05
-      - id: topic/collaboration
-        definition: Working with colleagues, reviews, handoffs.
-        status: active
-        created: 2026-11-05
-      - id: topic/versioning
-        definition: Design history, reproducibility, file compatibility.
-        status: active
-        created: 2026-11-05
-      - id: topic/offline
-        definition: Working without network or behind a firewall.
-        status: active
-        created: 2026-11-05
+  software:
+    board: "*ADI (Global) / Software"
+    description: Which ADI product is being discussed in the highlight. Apply on every relevant mention.
+    tags:
+      - {id: software/ace, definition: ACE Analysis Control Evaluation platform., status: active}
+      - {id: software/ace-dvd, definition: Device View Designer within ACE., status: active}
+      - {id: software/a2b-bus-analyzer, definition: A2B audio bus tool., status: active}
+      - {id: software/analog-com, definition: analog.com website experience., status: active}
+      - {id: software/data-mesh, definition: ADI Data Mesh initiative., status: active}
+      - {id: software/ee-sim, definition: EE-Sim simulation tool., status: active}
+      - {id: software/harmonic-design-system, definition: Harmonic design system., status: active}
+      - {id: software/interactive-engineering-solutions, definition: IES platform., status: active}
+      - {id: software/ltpowercad, definition: LTpowerCAD tool., status: active}
+      - {id: software/ltspice, definition: LTspice simulation tool., status: active}
+      - {id: software/noise-tool, definition: Noise analysis tool., status: active}
+      - {id: software/pdt, definition: Product Development Tools platform., status: active}
+      - {id: software/fluxbench-designer, definition: FICTIONAL demo product; delete for real use., status: active}
+  market:
+    board: "*ADI (Global) / Market"
+    description: Which market is being discussed in the highlight, which may differ from the participant's own.
+    tags:
+      - {id: market/aerospace-defence, definition: A&D context, requirements, or practices., status: active}
+      - {id: market/automotive, definition: Automotive context., status: active}
+      - {id: market/broad-market, definition: General or non-specific market context., status: active}
+      - {id: market/communications, definition: Comms, 5G, or wireless context., status: active}
+      - {id: market/consumer, definition: Consumer electronics context., status: active}
+      - {id: market/data-center, definition: Data center or cloud infrastructure context., status: active}
+      - {id: market/digital-healthcare, definition: Medical or healthcare tech context., status: active}
+      - {id: market/energy, definition: Power generation, grid, or renewables context., status: active}
+      - {id: market/industrial-automation, definition: Factory automation or IIoT context., status: active}
+      - {id: market/instrumentation-measurement, definition: Test and measurement context., status: active}
+      - {id: market/intelligent-buildings, definition: Smart building or BMS context., status: active}

@@ -11,6 +11,7 @@ from vaultlib import vault_root
 root = vault_root()
 EMAIL = re.compile(r"[\w.+-]+@[\w-]+\.[\w.-]+")
 PHONE = re.compile(r"(?<![\d:])\+?\d[\d .()-]{8,}\d(?![\d:])")
+HEX_ID = re.compile(r"\"id\":\s*\"[0-9a-f]{16}\"")   # canvas node ids: 16 hex chars, digit-only ones look like phone numbers
 ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 names = []
 GENERIC = {"semiconductor", "robotics", "medical", "systems", "technologies", "industries", "solutions", "electronics",
@@ -35,7 +36,7 @@ if args == ["--staged"]:
 files = [Path(f) for f in args] or [p for p in root.rglob("*") if p.suffix in (".md", ".txt", ".yaml", ".yml", ".json", ".base", ".csv")]
 hits = 0
 for f in files:
-    if not f.exists() or "_raw" in f.parts or ".git" in f.parts:
+    if not f.exists() or "_raw" in f.parts or ".git" in f.parts or ".obsidian" in f.parts:
         continue
     try:
         text = f.read_text(encoding="utf-8")
@@ -45,6 +46,7 @@ for f in files:
         kinds = []
         if EMAIL.search(line) and "noreply@" not in line: kinds.append("email")
         for m in PHONE.finditer(line):
+            if HEX_ID.search(line): break
             digits = re.sub(r"\D", "", m.group())
             if len(digits) >= 9 and not ISO_DATE.match(m.group().strip()): kinds.append("phone"); break
         if name_re and name_re.search(line): kinds.append("participant-name")

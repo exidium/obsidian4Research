@@ -1,0 +1,53 @@
+project: 2026_demo-fluxbench
+notes: Fictional demo taxonomy. Group ids must not reuse workspace dimension names.
+groups:
+  - id: workflow
+    name: "1. Workflow and Process"
+    tags:
+      - {id: workflow/workflow-described, definition: Participant describes how they actually do a step of their work., status: active}
+      - {id: workflow/review-loop-described, definition: Participant describes how a design gets reviewed and iterated with colleagues., status: active}
+  - id: tools
+    name: "2. Tool Behaviour"
+    tags:
+      - {id: tools/hidden-defaults, definition: A parameter or assumption the tool applies without showing it on the main screens., status: active}
+      - {id: tools/silent-parameter-reset, definition: The tool changed a value the user had set, without telling them (usually after a part change)., status: active}
+      - {id: tools/model-version-drift, definition: Results of an old design change because a part model was updated., status: active}
+      - {id: tools/simulation-crash, definition: The application closes or fails during a run., status: active}
+      - {id: tools/no-progress-feedback, definition: Long runs give no progress indication or block the interface., status: active}
+      - {id: tools/design-history-missing, definition: No record inside the project of what changed and when., status: active}
+  - id: correlation
+    name: "3. Simulation vs Bench"
+    tags:
+      - {id: correlation/sim-vs-bench-gap, definition: Participant compares a simulated value with a measurement or a trusted calculation and reports a gap., status: active}
+      - {id: correlation/kit-model-drift, definition: The evaluation kit's actual parts differ from the simulation model's defaults., status: active}
+      - {id: correlation/accuracy-statement-missing, definition: Participant wants the vendor to state how accurate a result is meant to be., status: active}
+      - {id: correlation/loss-breakdown-missing, definition: Results are aggregated in a way that blocks diagnosing which mechanism is off., status: active}
+      - {id: correlation/thermal-correlated, definition: The thermal estimate matched hardware; apply to positive correlation moments., status: active}
+  - id: sharing
+    name: "4. Sharing and Versions"
+    tags:
+      - {id: sharing/file-version-lock, definition: Project files cannot be opened across tool versions., status: active}
+      - {id: sharing/screenshot-support, definition: Support happens via screenshots because the design itself cannot be shared., status: active}
+      - {id: sharing/pdf-review-loop, definition: Design review runs on exported PDFs rather than the design., status: active}
+      - {id: sharing/design-fork, definition: Two people hold divergent copies of a design with no way to tell which is current., status: active}
+  - id: licensing
+    name: "5. Licensing and Offline"
+    tags:
+      - {id: licensing/offline-activation, definition: Activation or check-in needs network access the user does not have., status: active}
+      - {id: licensing/license-lockout, definition: The tool locked the user out because a license check failed., status: active}
+  - id: docs
+    name: "6. Documentation and Support"
+    tags:
+      - {id: docs/feature-vs-symptom-docs, definition: Documentation is organised by feature while users search by symptom., status: active}
+      - {id: docs/shadow-docs, definition: Someone outside the product team wrote their own guide to compensate for the official docs., status: active}
+      - {id: docs/no-defect-channel, definition: No practical way to report a bug from inside the tool., status: active}
+  - id: export
+    name: "7. Export and Handoff"
+    tags:
+      - {id: export/plot-data-not-exportable, definition: Plots export as images but the underlying numbers do not., status: active}
+      - {id: export/report-retyping, definition: Numbers are retyped by hand into reports because no data export exists., status: active}
+      - {id: export/approved-parts-mismatch, definition: BOM export suggests parts outside the company's approved vendor list., status: active}
+  - id: selection
+    name: "8. Part Selection"
+    tags:
+      - {id: selection/part-finder-stock, definition: Part selection filtered by distributor stock; apply to selection moments., status: active}

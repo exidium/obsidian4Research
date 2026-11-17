@@ -1,0 +1,389 @@
+{
+ "nodes": [
+  {
+   "id": "1c80317fa3b1799d",
+   "type": "text",
+   "x": 0,
+   "y": -220,
+   "width": 1100,
+   "height": 150,
+   "text": "# Tag board \u00b7 2026_demo-fluxbench \u00b7 lanes = journey/*\nDrag a card into another lane (or copy it into several), then run:\n`python3 _system/scripts/canvas_sync.py 2026_demo-fluxbench` to update the tags. Cards outside every lane are left untouched.\nRegenerate the board: `python3 _system/scripts/tag_board.py 2026_demo-fluxbench --canvas --dimension journey`"
+  },
+  {
+   "id": "bdd640fb06671ad1",
+   "type": "group",
+   "x": 0,
+   "y": 0,
+   "width": 480,
+   "height": 1764,
+   "label": "journey/support (9)",
+   "color": "1"
+  },
+  {
+   "id": "3eb13b9046685257",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0002-0001 Version lock forces screenshots.md",
+   "x": 20,
+   "y": 70,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "23b8c1e9392456de",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0002-0002 Rebuilding designs from screenshots.md",
+   "x": 20,
+   "y": 256,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "1a3d1fa7bc8960a9",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0002-0003 Second laptop as a licensing workaround.md",
+   "x": 20,
+   "y": 442,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "bd9c66b3ad3c2d6d",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0002-0004 Thirty days of offline grace.md",
+   "x": 20,
+   "y": 628,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "8b9d2434e465e150",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0002-0005 Silent reset is the top support cause.md",
+   "x": 20,
+   "y": 814,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "972a846916419f82",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0002-0006 Shadow checklist of hidden defaults.md",
+   "x": 20,
+   "y": 1000,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "0822e8f36c031199",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0002-0007 Docs organised by feature, not symptom.md",
+   "x": 20,
+   "y": 1186,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "17fc695a07a0ca6e",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0002-0011 Announce changes, halve support questions.md",
+   "x": 20,
+   "y": 1372,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "3b8faa1837f8a88b",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0003-0007 No place to report a crash.md",
+   "x": 20,
+   "y": 1558,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "9a1de644815ef6d1",
+   "type": "group",
+   "x": 520,
+   "y": 0,
+   "width": 480,
+   "height": 1578,
+   "label": "journey/design (8)",
+   "color": "2"
+  },
+  {
+   "id": "8fadc1a606cb0fb3",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0001-0002 Stock-aware part picker beats the spreadsheet.md",
+   "x": 540,
+   "y": 70,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "b74d0fb132e70629",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0001-0003 Spreadsheet wins when tool and spreadsheet disagree.md",
+   "x": 540,
+   "y": 256,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "b38a088ca65ed389",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0001-0004 Part change silently reset switching frequency.md",
+   "x": 540,
+   "y": 442,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "6b65a6a48b8148f6",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0001-0005 Lost trust because the tool didn't say what it changed.md",
+   "x": 540,
+   "y": 628,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "72ff5d2a386ecbe0",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0001-0006 Eleven-minute sweep looked like a hang.md",
+   "x": 540,
+   "y": 814,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "4737819096da1dac",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0001-0011 No design history in the project file.md",
+   "x": 540,
+   "y": 1000,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "de8a774bcf36d58b",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0002-0012 Model updates change old results on reopen.md",
+   "x": 540,
+   "y": 1186,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "c241330b01a9e71f",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0003-0011 Thermal model is less board-specific than assumed.md",
+   "x": 540,
+   "y": 1372,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "28df6ec4ce4a2bbd",
+   "type": "group",
+   "x": 1040,
+   "y": 0,
+   "width": 480,
+   "height": 1578,
+   "label": "journey/validate (8)",
+   "color": "3"
+  },
+  {
+   "id": "6c307511b2b9437a",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0001-0009 Thermal estimate matched the first prototype.md",
+   "x": 1060,
+   "y": 70,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "47229389571aa876",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0001-0010 Trust is correlation.md",
+   "x": 1060,
+   "y": 256,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "371ecd7b27cd8130",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0003-0001 Every discrepancy becomes a documented investigation.md",
+   "x": 1060,
+   "y": 442,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "c37459eef50bea63",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0003-0002 Kit capacitor revision explained the ripple gap.md",
+   "x": 1060,
+   "y": 628,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "1a2a73ed562b0f79",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0003-0003 Loss shown as one number blocks diagnosis.md",
+   "x": 1060,
+   "y": 814,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "6142ea7d17be3111",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0003-0006 Temperature sweeps crash one in three.md",
+   "x": 1060,
+   "y": 1000,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "5be6128e18c26797",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0003-0008 Trust earned project by project.md",
+   "x": 1060,
+   "y": 1186,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "580d7b71d8f56413",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0003-0009 Quality accepts a vendor statement, not a gut.md",
+   "x": 1060,
+   "y": 1372,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "43b7a3a69a8dca03",
+   "type": "group",
+   "x": 1560,
+   "y": 0,
+   "width": 480,
+   "height": 1392,
+   "label": "journey/integrate (7)",
+   "color": "4"
+  },
+  {
+   "id": "0b1f9163ce9ff57f",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0001-0007 BOM export ignores the approved vendor list.md",
+   "x": 1580,
+   "y": 70,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "759cde66bacfb3d0",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0001-0008 Design review runs on PDF exports.md",
+   "x": 1580,
+   "y": 256,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "1ff49b7889463e85",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0002-0010 Designs should be shared like the silicon.md",
+   "x": 1580,
+   "y": 442,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "ec1b8ca1f91e1d4c",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0003-0004 Plots export, the numbers don't.md",
+   "x": 1580,
+   "y": 628,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "142c3fe860e7a113",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0003-0005 A day of retyping per report.md",
+   "x": 1580,
+   "y": 814,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "4b0dbb418d5288f1",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0003-0010 Project forks named with dates and initials.md",
+   "x": 1580,
+   "y": 1000,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "a0ee89aed453dd32",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0003-0012 CSV with assumptions in the header.md",
+   "x": 1580,
+   "y": 1186,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "e2acf72f9e574f7a",
+   "type": "group",
+   "x": 2080,
+   "y": 0,
+   "width": 480,
+   "height": 462,
+   "label": "journey/evaluate (2)",
+   "color": "5"
+  },
+  {
+   "id": "5c941cf0dc98d2c1",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0002-0008 Eval kit revised, model not.md",
+   "x": 2100,
+   "y": 70,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "3139d32c93cd59bf",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0002-0009 Small discrepancies lose the careful engineers.md",
+   "x": 2100,
+   "y": 256,
+   "width": 440,
+   "height": 170
+  },
+  {
+   "id": "11ce5dd2b45ed1f0",
+   "type": "group",
+   "x": 2600,
+   "y": 0,
+   "width": 480,
+   "height": 276,
+   "label": "journey/discover (1)",
+   "color": "6"
+  },
+  {
+   "id": "a9488d990bbb2599",
+   "type": "file",
+   "file": "10 Projects/2026_demo-fluxbench/c_highlights/H-S0001-0001 Activation blocked on the lab network.md",
+   "x": 2620,
+   "y": 70,
+   "width": 440,
+   "height": 170
+  }
+ ],
+ "edges": []
+}

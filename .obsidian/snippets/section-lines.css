@@ -1,0 +1,13 @@
+/* Section separators: a strong line under H1, a light one under H2. Reading view and Live Preview. */
+.markdown-rendered h1,
+.markdown-source-view.mod-cm6 .HyperMD-header-1 {
+  border-bottom: 2px solid var(--text-accent);
+  padding-bottom: 0.25em;
+  margin-bottom: 0.6em;
+}
+.markdown-rendered h2,
+.markdown-source-view.mod-cm6 .HyperMD-header-2 {
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding-bottom: 0.2em;
+  margin-bottom: 0.5em;
+}

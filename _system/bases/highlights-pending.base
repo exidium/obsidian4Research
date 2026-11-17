@@ -8,10 +8,10 @@ views:
     name: Pending review
     order:
       - file.name
+      - note.review
       - note.participant
       - note.tags
       - note.quote
-      - note.created_by
     sort:
       - property: file.name
         direction: ASC

@@ -6,11 +6,14 @@ views:
   - type: table
     name: Insights
     order:
-      - note.title
-      - note.confidence
+      - file.name
+      - note.evidence_level
       - note.status
       - note.participants
+      - note.research_question
       - note.tags
     sort:
-      - property: note.confidence
+      - property: note.evidence_level
         direction: DESC
+      - property: file.name
+        direction: ASC

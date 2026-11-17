@@ -88,7 +88,8 @@ participant: P-001
 quote: "verbatim, complete sentences, 1-2 minimum, never cut mid-thought"
 context: "[CONTEXT: what prompted this, or the framing a stranger needs]"   # optional; also [Q:] [OBS:] [NOTE:]
 tags: [insight/pain-point, sentiment/negative, journey/design, correlation/sim-vs-bench-gap]
-review: proposed                       # proposed | accepted | rejected
+review: proposed                       # proposed | accepted | rejected; set by the researcher (board or review.py), never by the tagger
+confidence: high                       # high | medium | low, the tagger's own rating; the researcher reads low ones first
 created_by: ai                         # ai | human
 model: claude-fable-5-1
 skill_version: 0.2.0

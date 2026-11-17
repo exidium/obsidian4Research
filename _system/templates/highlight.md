@@ -11,6 +11,7 @@ quote: "{{quote}}"
 context: "{{context}}"
 tags: [{{tags}}]
 review: proposed
+confidence: {{confidence}}
 created_by: {{created_by}}
 model: {{model}}
 skill_version: 0.2.0

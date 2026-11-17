@@ -83,7 +83,7 @@ Fill `## Summary` with five descriptive bullets: who the participant is in task 
 bash _system/scripts/provenance.sh research-ingest ingest S-####
 ```
 
-`ris_status` stays `raw` until highlighting starts. Report: source ID, title, paragraph count, duration, speakers inferred or not, transcription doubts. Then: `research-clip` → `media.py link S-#### <recording>` to attach the recording (and decide the blur regions), and `research-participants` → `check` so the participant has a card and a persona. Next step for the transcript: `research-highlight` → review S-####.
+`ris_status` stays `raw` until highlighting starts. Report: source ID, title, paragraph count, duration, speakers inferred or not, transcription doubts. Then: `research-clip` → `media.py link S-#### <recording>` to attach the recording (and decide the blur regions), and `research-participants` → `check` so the participant has a card and a persona. Then **run `research-highlight` in auto mode on the new source without being asked**: tagging is automatic; the researcher reviews the result on the board. Report both steps together: source written, N highlights proposed (by confidence), board link.
 
 ## Imports from the systems ADI already runs
 

@@ -16,6 +16,7 @@ views:
       - rejected
     order:
       - file.name
+      - note.confidence
       - note.quote
       - note.participant
       - note.tags
@@ -26,11 +27,14 @@ views:
         - note.review == "proposed"
     order:
       - file.name
+      - note.confidence
       - note.review
       - note.participant
       - note.tags
       - note.quote
     sort:
+      - property: note.confidence
+        direction: ASC
       - property: file.name
         direction: ASC
   - type: table

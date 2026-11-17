@@ -27,7 +27,7 @@ One skill per step of the research loop; each reads one level of the vault and w
 |---|---|---|
 | research-ingest | media or transcript → source note with stable block IDs, speakers, summary | "ingest the file in the inbox for P-004 on project X" |
 | research-organize | owns the taxonomy, structure, audits, tag migrations, new projects | "new project", "audit the vault", "approve proposed tags" |
-| research-highlight | review a transcript → numbered proposals; approved proposals → highlight notes | "review S-0003", "implement 2, 4 and 7", "what's pending" |
+| research-highlight | tags a transcript automatically into highlight notes (proposed, with confidence); ask mode shows proposals first | "tag S-0003", "accept all high from S-0003", "what's pending" |
 | research-synthesize | accepted highlights → themes → evidence-linked insight notes with evidence levels | "synthesize project X" |
 | research-report | insights → stakeholder readout in `f_deliverables/`, registered in the Reports table | "write the readout for the product owner" |
 | research-publish | study page, insights, readouts → Confluence pages (SDP UX Research), URL written back to the note | "publish the study to Confluence" |
@@ -41,12 +41,16 @@ One skill per step of the research loop; each reads one level of the vault and w
 
 - Transcripts are immutable after ingest. Block IDs never change.
 - Highlights are atomic, titled notes: verbatim complete sentences, a context annotation when the stranger test needs it, 2-3 tags across dimensions, a rationale, linked to a source block. Each one embeds its transcript block and carries an "Open in transcript" link with the timestamp; in the transcript, Strange New Worlds shows which blocks have highlights.
-- The AI reviews and proposes; the researcher approves; then highlights are written. Nothing is tagged autonomously.
+- Tagging is automatic: `research-highlight` writes highlights from the transcript as `proposed` with a confidence rating, triggered by ingest. The researcher is the gate, not the typist: accept or reject by exception on the review board or with `review.py`; nothing proposed reaches synthesis, reports or Confluence.
 - Insights are built from highlight notes only, never from raw transcripts. Each has a finding, severity, interpretation, embedded evidence, and a decision-forcing recommendation. Evidence level: strong 4+, emerging 2-3, insufficient 1 (no insight doc yet).
 - Workspace tags mirror the ADI boards and are admin-controlled. Project tags live in `d_tags/tags.yaml` with definitions. The AI may *propose* a project tag; only a human activates it.
 - Names never enter git. Participants are `P-###` with a public card in `20 Participants/`; the key (`_raw/participants.csv`, `_raw/participants/*identity.md`) is local only and comes from the Rally export via `participants.py sync`. Consent is tracked in Rally, referenced by `rally_id`.
 - Every AI action appends a line to `_system/provenance.log`.
 - Video never enters git. Recordings, clips and reels stay in `_raw/<project>/`, which in production is the OneDrive-synced SharePoint study folder; notes carry a path, checksum and timestamps. Internal participants appear in clips as text only.
+
+## Running it unattended (production shape)
+
+The same skills run without a laptop: a GitHub Action on the research repo (ADI's internal GitHub) runs `research-highlight` in auto mode on every new or changed source note and opens a pull request with the proposed highlights; the researcher's review is the PR plus the board. The Claude Code GitHub Action is the runner; the vault's `CLAUDE.md` and skills are its instructions; `health.py` is the check on the PR. Recordings stay in the SharePoint study folder, so the action never sees media or names.
 
 ## Setup
 

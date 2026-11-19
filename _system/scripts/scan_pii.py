@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.11"
+# dependencies = ["pyyaml"]
+# ///
 """Scan text files for identity leaks. Prints path:line<TAB>kind only, never the matched text.
   scan_pii.py [files...]      default: all .md/.txt/.yaml/.json/.base under the vault, excluding _raw
   scan_pii.py --staged        files staged in git (handles spaces in paths)

@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.11"
+# dependencies = ["pyyaml"]
+# ///
 """Apply lane membership from a_setup/boards/tag-board.canvas back to the highlight notes.
   canvas_sync.py <project_id> [--dry-run]
 A card's lanes (groups whose label starts with a taxonomy tag) replace that dimension's tags on the highlight.

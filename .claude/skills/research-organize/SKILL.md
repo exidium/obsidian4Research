@@ -12,17 +12,17 @@ Keeps the vault trustworthy over time. Two things rot a research repository: tag
 ### new project
 
 1. Collect: slug (kebab-case), title in the form `YYYY-MM Phase - Topic` (phases: Discovery, Evaluation, Validation, Workshop, Survey, Benchmarking), owner `P-###`, domain (mirrors Dovetail folder placement, e.g. `product-tools/rf-studio`, `ecosystem/studio-ecosystems`, `platform-web/analog-com`, `programs`, `operations`), Rally study reference.
-2. `python3 _system/scripts/new_project.py <slug> --title "<title>" --phase <phase> --owner P-### --domain <domain> --rally-study "<ref>"`
+2. `uv run _system/scripts/new_project.py <slug> --title "<title>" --phase <phase> --owner P-### --domain <domain> --rally-study "<ref>"`
 3. Open `01 project.md` and fill it with the user, keeping its three top-level sections (Study overview / Findings / Operations & data): an Introduction of at least two paragraphs (why the study exists, scope and out of scope, product space, audience by role, consent tracking), research questions and methodology, target participants. **A project without a filled Study Overview is a project nobody can use**; don't leave it blank.
 4. Seed `d_tags/tags.yaml`: propose 3 to 6 numbered groups from the research questions, each tag with a definition that says when to apply it and when not. Watch the common distinctions: tool hard to use vs capability missing; difficulty choosing vs difficulty finding; one document vs consistency across documents; sentiment about a product vs about a process.
 5. Put the discussion guide and brief into `a_setup/` as `SETUP ...` notes. Imported context (PRD, SOW, competitive reports) goes into `b_sources/reference/` as `REFERENCE ...` notes with `Source:` and `Last synced:` at the top. Stimulus shown to participants → `setup/STIMULUS ...`.
-6. If the domain has no synthesis folder yet: `python3 _system/scripts/new_domain.py <domain-slug> --title "<Domain>"`, and add the project to its Study Index.
+6. If the domain has no synthesis folder yet: `uv run _system/scripts/new_domain.py <domain-slug> --title "<Domain>"`, and add the project to its Study Index.
 7. `bash _system/scripts/provenance.sh research-organize new-project <project_id>`
 
 ### audit
 
 ```bash
-python3 _system/scripts/audit.py --write
+uv run _system/scripts/audit.py --write
 ```
 
 Errors break traceability (missing blocks, non-verbatim quotes, unknown tags, highlight without a workspace tag, PII, file names not starting with their ID). Fix them or hand them to the user. Warnings are hygiene (single-dimension tagging, missing fields, highlight counts outside the 30/60/90-minute ranges, insights with one participant). Summarise in five lines and list the decisions the user must make. Run before synthesis and before any push to the shared remote.
@@ -32,23 +32,23 @@ Errors break traceability (missing blocks, non-verbatim quotes, unknown tags, hi
 Only project tags can be proposed. Workspace tags (`experience`, `functionality`, `insight`, `sentiment`, `ops`, `journey`, `software`, `market`) are admin-controlled by the UXR team; never add, rename, or deprecate them here. If a workspace change seems needed, tell the user to raise it with the UXR team.
 
 1. Open the project's `d_tags/tags.yaml`; list every tag with `status: proposed`, its definition, and its `evidence` highlight IDs.
-2. Show the quotes behind each (`python3 _system/scripts/highlights_table.py <project> --tag <tag>`) and recommend: **activate** (distinct concept, two or more participants, definition written), **merge** into an existing tag (`migrate_tag.py --project`), or **reject** (one-off, or an opinion rather than a behaviour, or a theme rather than a classification; themes are insights, not tags).
+2. Show the quotes behind each (`uv run _system/scripts/highlights_table.py <project> --tag <tag>`) and recommend: **activate** (distinct concept, two or more participants, definition written), **merge** into an existing tag (`migrate_tag.py --project`), or **reject** (one-off, or an opinion rather than a behaviour, or a theme rather than a classification; themes are insights, not tags).
 3. The user decides. Apply: set `status`, `decided` date. Never activate on your own.
 
 ### migrate tag
 
 ```bash
-python3 _system/scripts/migrate_tag.py <old> <new> --project <id> --dry-run
-python3 _system/scripts/migrate_tag.py <old> <new> --project <id>
+uv run _system/scripts/migrate_tag.py <old> <new> --project <id> --dry-run
+uv run _system/scripts/migrate_tag.py <old> <new> --project <id>
 ```
 
 The new tag must already exist. Old becomes `deprecated` with `merged_into`. Audit afterwards. For workspace tags the script rewrites notes but leaves `taxonomy.yaml` alone.
 
 ### tag board / sync the board
 
-- `python3 _system/scripts/tag_board.py <project>` writes, from `taxonomy.yaml` and the project's `d_tags/tags.yaml`: tag pages (`_system/tags/<dim>/<slug>.md` for workspace tags, `10 Projects/<p>/d_tags/<group>/<slug>.md` for project tags; `type: tag`, definition, counts, and an inline base listing the tag's highlights live), `a_setup/boards/tags.base` (Kanban: lanes = tag groups, cards = tags; the Dovetail tag board), `a_setup/boards/tag-board.base` (highlight boards per group) and `03 tag board.md` (the page embedding all of them with definitions). Re-run after any change to tags.yaml or taxonomy.yaml and after each highlight run (counts and `tag_groups`). Tag pages of removed tags are deleted; deprecated tags keep theirs. `--all` → vault-wide equivalents in `_system/`.
-- `python3 _system/scripts/tag_board.py <project> --canvas --dimension <dim-or-group>` → `a_setup/boards/tag-board.canvas`: one lane per tag, highlights as draggable cards. Default dimension `journey`.
-- After the user drags cards: `python3 _system/scripts/canvas_sync.py <project> --dry-run`, then without the flag. A new lane labelled with an unknown project tag becomes `proposed`; a new workspace lane is refused. Regenerate the boards after sync.
+- `uv run _system/scripts/tag_board.py <project>` writes, from `taxonomy.yaml` and the project's `d_tags/tags.yaml`: tag pages (`_system/tags/<dim>/<slug>.md` for workspace tags, `10 Projects/<p>/d_tags/<group>/<slug>.md` for project tags; `type: tag`, definition, counts, and an inline base listing the tag's highlights live), `a_setup/boards/tags.base` (Kanban: lanes = tag groups, cards = tags; the Dovetail tag board), `a_setup/boards/tag-board.base` (highlight boards per group) and `03 tag board.md` (the page embedding all of them with definitions). Re-run after any change to tags.yaml or taxonomy.yaml and after each highlight run (counts and `tag_groups`). Tag pages of removed tags are deleted; deprecated tags keep theirs. `--all` → vault-wide equivalents in `_system/`.
+- `uv run _system/scripts/tag_board.py <project> --canvas --dimension <dim-or-group>` → `a_setup/boards/tag-board.canvas`: one lane per tag, highlights as draggable cards. Default dimension `journey`.
+- After the user drags cards: `uv run _system/scripts/canvas_sync.py <project> --dry-run`, then without the flag. A new lane labelled with an unknown project tag becomes `proposed`; a new workspace lane is refused. Regenerate the boards after sync.
 - All boards are native Bases (Kanban per tag group, grouped by a formula). Re-tagging by drag happens on the canvas only. Tag pages are generated: never hand-edit them; edit `d_tags/tags.yaml` and re-run.
 
 ### project status

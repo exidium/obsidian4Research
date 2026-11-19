@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.11"
+# dependencies = ["pyyaml"]
+# ///
 """new_domain.py <slug> --title "RF Studio"   -> 00 Synthesis/<slug>/ with Landscape, What We Know, Open Questions, Study Index."""
 import argparse, sys
 from datetime import date

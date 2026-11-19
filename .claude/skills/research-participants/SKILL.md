@@ -19,7 +19,7 @@ A participant is two halves. The **public card** (`20 Participants/P-###.md`) ca
 
 ### a new participant during ingest
 
-`research-ingest` needs a `P-###`. `python3 _system/scripts/next_id.py participant` gives the next ID; the user adds the person in Rally and re-exports, then `sync`. Until then the source note carries the ID and the card is missing; `check` will keep saying so.
+`research-ingest` needs a `P-###`. `uv run _system/scripts/next_id.py participant` gives the next ID; the user adds the person in Rally and re-exports, then `sync`. Until then the source note carries the ID and the card is missing; `check` will keep saying so.
 
 ### questions about a participant
 

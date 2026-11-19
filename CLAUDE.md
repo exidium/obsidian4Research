@@ -25,9 +25,9 @@ This folder is an Obsidian vault and a research repository. Read `_system/schema
 ## IDs
 
 - Participant `P-001`, persona `PE-01` (file name `PE-01 <role> who <one behaviour>`, e.g. `PE-01 Design engineer who trusts a result only after it matched the bench`; no adjectives, no metaphors, no invented first names), source `S-0001`, highlight `H-S0001-0003` (source + sequence), insight `I-<project>-01`, project folder `YYYY_slug`.
-- Highlight and insight **file names are the ID followed by a title** that passes the stranger test (`H-S0001-0003 Spreadsheet wins when tool and spreadsheet disagree.md`), with `aliases: [ID]` for search. **Link by file name with the ID as display text**: `[[H-S0001-0003 Spreadsheet wins when tool and spreadsheet disagree|H-S0001-0003]]`, embed as `![[<file name>]]`. A bare `[[H-S0001-0003]]` does not resolve in Obsidian (aliases only feed autocomplete). `python3 _system/scripts/next_id.py` and `vaultlib.find_by_id()` give you the file name. Source titles follow `[Interview] P-001 - 14 Oct 2026`.
+- Highlight and insight **file names are the ID followed by a title** that passes the stranger test (`H-S0001-0003 Spreadsheet wins when tool and spreadsheet disagree.md`), with `aliases: [ID]` for search. **Link by file name with the ID as display text**: `[[H-S0001-0003 Spreadsheet wins when tool and spreadsheet disagree|H-S0001-0003]]`, embed as `![[<file name>]]`. A bare `[[H-S0001-0003]]` does not resolve in Obsidian (aliases only feed autocomplete). `uv run _system/scripts/next_id.py` and `vaultlib.find_by_id()` give you the file name. Source titles follow `[Interview] P-001 - 14 Oct 2026`.
 - Block IDs inside a source: `^s0001-0012` (lowercase source id + 4-digit paragraph number).
-- Next free IDs: `python3 _system/scripts/next_id.py participant|source|highlight <S-id>|insight <project>`.
+- Next free IDs: `uv run _system/scripts/next_id.py participant|source|highlight <S-id>|insight <project>`.
 
 ## Where things go
 

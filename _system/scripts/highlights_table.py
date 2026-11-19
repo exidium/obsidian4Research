@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.11"
+# dependencies = ["pyyaml"]
+# ///
 """Compact TSV of a project's highlights for synthesis (keeps context small).
   highlights_table.py <project_id> [--accepted-only] [--tag theme/pain]"""
 import argparse, sys

@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.11"
+# dependencies = ["pyyaml"]
+# ///
 """Rename or merge a tag across notes and mark it deprecated.
   migrate_tag.py <old-tag> <new-tag> [--project <id>] [--dry-run]
 Project tags need --project (edits that project's tags.yaml and notes). Workspace tags are admin-controlled:

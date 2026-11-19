@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.11"
+# dependencies = ["pyyaml"]
+# ///
 """new_project.py <slug> --title "YYYY-MM Phase - Topic" [--phase discovery] [--owner P-000] [--domain product-tools/rf-studio]
                  [--year 2026] [--rally-study X]
 Creates 10 Projects/YYYY_slug/ with 01 project.md (Study Overview), 02 insights review.md, 03 tag board.md, a_setup/, b_sources/, c_highlights/, d_tags/tags.yaml, e_insights/, f_deliverables/, setup/, reference/, sources/, highlights/, insights/, deliverables/."""

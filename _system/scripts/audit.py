@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.11"
+# dependencies = ["pyyaml"]
+# ///
 """Vault integrity audit. Prints a Markdown report; --write saves it to _system/reports/.
 Exit 1 when errors exist (warnings alone exit 0)."""
 import re, sys, subprocess

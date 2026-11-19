@@ -14,7 +14,7 @@ A source note is Dovetail's "data entry": one piece of primary research that par
 | `project` | folder under `10 Projects/` | If missing, stop: `research-organize` → new project first. |
 | `entry_type` | interview, workshop, feedback, survey, test, observation, demo, diary | Drives the title prefix `[Interview]`. |
 | `methodology` | user-interview, usability-test, workshop, survey, guerilla-testing, demo, card-sorting, diary-study | |
-| `participant` | `P-###` | Never a name. New person → `python3 _system/scripts/next_id.py participant`, then ask the user to add the row to `_raw/participants.csv` themselves. |
+| `participant` | `P-###` | Never a name. New person → `uv run _system/scripts/next_id.py participant`, then ask the user to add the row to `_raw/participants.csv` themselves. |
 | `participant_type` | external-customer, internal-stakeholder, internal-engineer | Essential for weighting findings. |
 | `role` | free text, job role | e.g. "RF applications engineer". No employer names. |
 | `software_used` | `software/*` tags | Tools the participant *uses*, not tools they mentioned. |
@@ -47,7 +47,7 @@ Minutes per hour of audio on Apple Silicon. The JSON path on the last line feeds
 ### 3. Build the source note
 
 ```bash
-python3 _system/scripts/build_source.py --input "<file>" --project <project> --participant P-### \
+uv run _system/scripts/build_source.py --input "<file>" --project <project> --participant P-### \
   --entry-type interview --methodology user-interview --participant-type external-customer --role "<role>" \
   --interviewer P-000 --rally-id "<id>" --date YYYY-MM-DD --language en \
   --origin "_raw/<project>/<file>" --transcriber "mlx-whisper/large-v3-turbo|teams|krisp|dovetail-export|manual" \
@@ -68,7 +68,7 @@ Whisper output has no `**Speaker:**` prefixes. Assign `**Interviewer:**` and `**
 Names, employers, emails, phone numbers must not survive in the vault. Replace: participant → `P-###`; interviewer → `Interviewer`; colleagues → `[colleague]`; employer or customer company → `[company]`; email/phone → `[email]`/`[phone]`. Named ADI products and competitor products stay (they are tagged later). Then:
 
 ```bash
-python3 _system/scripts/scan_pii.py "10 Projects/<project>/b_sources/S-####.md"
+uv run _system/scripts/scan_pii.py "10 Projects/<project>/b_sources/S-####.md"
 ```
 
 Zero findings → `redacted: true`. The scan only knows names in `_raw/participants.csv`, so still read for names yourself.

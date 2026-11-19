@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.11"
+# dependencies = ["pyyaml"]
+# ///
 """Generate the live tag board for a project (or the vault).
   tag_board.py <project_id>
         -> 10 Projects/<project>/a_setup/boards/tag-board.base : one Kanban view per tag group (workspace dimension or
@@ -73,7 +77,7 @@ if canvas:
     rnd = random.Random(42); nid = lambda: "%016x" % rnd.getrandbits(64)
     CW, CH, GAP, LW, PAD, HEAD = 440, 170, 16, 480, 20, 70
     nodes = [{"id": nid(), "type": "text", "x": 0, "y": -220, "width": 1100, "height": 150,
-              "text": f"# Tag board · {project} · lanes = {dimension}/*\nDrag a card into another lane (or copy it into several), then run:\n`python3 _system/scripts/canvas_sync.py {project}` to update the tags. Cards outside every lane are left untouched.\nRegenerate the board: `python3 _system/scripts/tag_board.py {project} --canvas --dimension {dimension}`"}]
+              "text": f"# Tag board · {project} · lanes = {dimension}/*\nDrag a card into another lane (or copy it into several), then run:\n`uv run _system/scripts/canvas_sync.py {project}` to update the tags. Cards outside every lane are left untouched.\nRegenerate the board: `uv run _system/scripts/tag_board.py {project} --canvas --dimension {dimension}`"}]
     colors = ["1", "2", "3", "4", "5", "6"]
     for i, t in enumerate(lanes):
         hs = sorted(by_tag[t], key=lambda x: x["highlight_id"])
@@ -176,7 +180,7 @@ else:
 # ---- .md page of live embeds
 out = [f"# Tag board{'' if project else ' (all projects)'}", "",
        "Every board reads the highlight notes live. "
-       f"Structure generated {date.today()} by `python3 _system/scripts/tag_board.py {arg}`; re-run when a tag group is added.", "",
+       f"Structure generated {date.today()} by `uv run _system/scripts/tag_board.py {arg}`; re-run when a tag group is added.", "",
        "## Tag board",
        "Lanes are tag groups, cards are tags (with definition and counts). Click a tag to open its page with the live list of its highlights. Native Bases, no plugin.",
        f"![[{f'10 Projects/{project}/{BOARDS}/tags.base' if project else '_system/bases/tags-all.base'}#Tag board]]", "",
@@ -191,7 +195,7 @@ for gid, (name, desc, gtags) in groups.items():
     out.append("")
 if project:
     out += ["## Other views", f"![[{base_ref}#By participant]]", "", f"![[{base_ref}#By review status]]", "",
-            f"[[10 Projects/{project}/{BOARDS}/tag-board.canvas|tag-board.canvas]] · drag cards between lanes, then `python3 _system/scripts/canvas_sync.py {project}`.", ""]
+            f"[[10 Projects/{project}/{BOARDS}/tag-board.canvas|tag-board.canvas]] · drag cards between lanes, then `uv run _system/scripts/canvas_sync.py {project}`.", ""]
 fm = {"type": "overview", "project": project or "all", "generated": str(date.today())}
 target = (root / "10 Projects" / project / f"{PAGES['tagboard']}.md") if project else (root / "_system" / "tag-board.md")
 write_note(target, fm, "\n" + "\n".join(out) + "\n")

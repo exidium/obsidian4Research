@@ -19,7 +19,7 @@ Space **SDPUXR** (SDP UX Research), under **Projects › <year>**. The study pag
 
 ## Procedure
 
-1. **Readiness.** `python3 _system/scripts/audit.py` clean for the project. An insight should be `status: reviewed`; if `draft`, say so and ask (the fictional demo publishes drafts). `redacted: true` on every source behind the evidence.
+1. **Readiness.** `uv run _system/scripts/audit.py` clean for the project. An insight should be `status: reviewed`; if `draft`, say so and ask (the fictional demo publishes drafts). `redacted: true` on every source behind the evidence.
 2. **Render.** `uv run _system/scripts/publish.py render <project>` writes one HTML body per page to `_system/publish/<project>/` plus `manifest.json`. Evidence in insight pages becomes quotes with their trace (`P-001 · S-0001 @ 00:04:09 · H-S0001-0005`) and tags; Bases views and media are dropped; wikilinks to notes that already have `published_to` become Confluence links, others become plain text with the ID. **Render insights before the study page**, so the study page links to them.
 3. **Preview gate** (from the `atlassian-docs` skill): show the target (space › parent), the page tree, and the body as rendered text for each page; wait for an explicit yes. Load the `atlassian-docs` skill for the connection rules.
 4. **Create or update.** `searchConfluenceUsingCql` with `title = "<title>" AND space = "SDPUXR"`; if the page exists, `updateConfluencePage` with a version message, otherwise `createConfluencePage` with `contentFormat: html` and the parent ID. Order: study page, then insights, then readouts, then update the study page once more so its lists are links.

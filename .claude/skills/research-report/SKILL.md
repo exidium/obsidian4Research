@@ -10,8 +10,8 @@ A readout is the study rewritten for one audience and one decision. It is built 
 ## Before writing
 
 1. Ask, or take from the request: **audience** (roles), **the decision it informs**, **format** (full readout, one-pager, exec summary), **tone** (neutral research register, or the user's voice with a sample for the humanizer).
-2. `python3 _system/scripts/audit.py` clean; insights at least `draft`, preferably `reviewed`.
-3. Read `01 project.md` (introduction, questions, participants) and every insight in `e_insights/`. Pull the quotes from `python3 _system/scripts/highlights_table.py <project> --accepted-only` (or all, flagged, if review isn't done).
+2. `uv run _system/scripts/audit.py` clean; insights at least `draft`, preferably `reviewed`.
+3. Read `01 project.md` (introduction, questions, participants) and every insight in `e_insights/`. Pull the quotes from `uv run _system/scripts/highlights_table.py <project> --accepted-only` (or all, flagged, if review isn't done).
 
 ## Structure (full readout)
 

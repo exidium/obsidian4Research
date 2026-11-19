@@ -11,7 +11,7 @@ The answer to "what do we know about X" is the researcher's synthesis, not a pil
 
 1. **Scope.** If the question names a project, stay in it; otherwise search the whole vault (`10 Projects/` and `90 Archive/`), and say which studies the answer draws on.
 2. **Insights first.** Search `e_insights/` titles, findings and tags (`grep -ril "<term>" "10 Projects/"*/e_insights/`). An insight that answers the question is the answer; quote its finding, evidence level, participants and recommendation, and link it.
-3. **Then highlights.** `python3 _system/scripts/highlights_table.py <project> --tag <tag>` when a tag matches the topic, or a case-insensitive grep over `c_highlights/` for the term and its synonyms. Only `review: accepted` or `proposed` highlights, never `rejected`. Group by participant; count participants, not quotes.
+3. **Then highlights.** `uv run _system/scripts/highlights_table.py <project> --tag <tag>` when a tag matches the topic, or a case-insensitive grep over `c_highlights/` for the term and its synonyms. Only `review: accepted` or `proposed` highlights, never `rejected`. Group by participant; count participants, not quotes.
 4. **Then personas and participants** when the question is about who: `30 Personas/` and `20 Participants/` cards (public half only).
 5. **Answer** in this shape:
    - One paragraph: what we know, how strong it is (strong / emerging / single mention / nothing), and from which studies.

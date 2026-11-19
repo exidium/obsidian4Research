@@ -47,10 +47,10 @@ accepted highlights  →  research-synthesize
 ## Write the highlights
 
 1. **auto**: all proposals. **ask**: the approved numbers. Before writing, list existing highlights for the source and skip any block already highlighted.
-2. For each: `python3 _system/scripts/next_id.py highlight S-####`, then write `c_highlights/H-S####-#### <title>.md` from `_system/templates/highlight.md`. File name is the ID plus the title; `aliases` contains the ID; `quote` is the excerpt exactly as in the block; `context` holds the annotation; `{{timestamp}}` is the block's `[hh:mm:ss]` (the "Open in transcript" link). `review: proposed` in auto mode (`accepted` only for proposals the user approved in ask mode), `confidence`, `created_by: ai`, `model`, `skill_version: 0.4.0`, `created`.
+2. For each: `uv run _system/scripts/next_id.py highlight S-####`, then write `c_highlights/H-S####-#### <title>.md` from `_system/templates/highlight.md`. File name is the ID plus the title; `aliases` contains the ID; `quote` is the excerpt exactly as in the block; `context` holds the annotation; `{{timestamp}}` is the block's `[hh:mm:ss]` (the "Open in transcript" link). `review: proposed` in auto mode (`accepted` only for proposals the user approved in ask mode), `confidence`, `created_by: ai`, `model`, `skill_version: 0.4.0`, `created`.
 3. `PROPOSED` project tags: append to `d_tags/tags.yaml` under the right group with `status: proposed`, `proposed_by: ai`, `definition`, `evidence: [H-...]`. `research-organize` activates them.
-4. Set the review doc `status: implemented` and the source `ris_status: review`. `python3 _system/scripts/audit.py`; fix what it reports for this source (a non-verbatim quote is the usual error).
-5. `python3 _system/scripts/tag_board.py <project>` and `... --canvas`; `uv run _system/scripts/personas.py refresh` (persona appearance lists).
+4. Set the review doc `status: implemented` and the source `ris_status: review`. `uv run _system/scripts/audit.py`; fix what it reports for this source (a non-verbatim quote is the usual error).
+5. `uv run _system/scripts/tag_board.py <project>` and `... --canvas`; `uv run _system/scripts/personas.py refresh` (persona appearance lists).
 6. `bash _system/scripts/provenance.sh research-highlight implement S-#### $MODEL`. Report: count by confidence, tag distribution, proposed project tags, doubts, and point the user to `02 insights review.md` (or `review.py pending`) to accept or reject by exception.
 
 ## The human gate (review by exception)

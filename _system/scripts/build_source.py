@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.11"
+# dependencies = ["pyyaml"]
+# ///
 """Build a source note (transcript with stable block IDs) from a transcript file.
 
 Accepts: Whisper JSON (mlx_whisper --output-format json), .srt, .vtt (incl. Teams <v Name>),

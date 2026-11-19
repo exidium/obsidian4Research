@@ -2,7 +2,7 @@
 
 A file-based research repository: Obsidian for browsing and querying, Claude Code skills for ingesting, organizing, and analyzing. Replaces the core Dovetail loop (data entries → tagged highlights → insight docs) with Markdown, git, and a two-level tag taxonomy, following the ADI "Working with us" research conventions (Study Overview, SETUP/REFERENCE docs, workspace vs project tags, review-first AI tagging, evidence-linked insights with recommendations, domain synthesis).
 
-Open this folder as an Obsidian vault. Run Claude Code from this folder to use the skills.
+Open this folder as an Obsidian vault. Run Claude Code from this folder to use the skills. New machine or new person: `GETTING STARTED.md`. Showing it to someone: `_system/docs/demo-runsheet.md`.
 
 ## Layout
 
@@ -75,7 +75,7 @@ uv run _system/scripts/demo_recording.py S-0001 --voice Samantha   # name plate 
 uv run _system/scripts/demo_recording.py S-0002 --voice Karen
 uv run _system/scripts/demo_recording.py S-0003 --voice Moira
 # each prints its `media.py link` command; add --redact 857,198,176,176:face to blur the camera tile too
-for i in "10 Projects/2026_demo-fluxbench/insights/"I-*.md; do uv run _system/scripts/media.py reel "$(basename "$i" | cut -d' ' -f1)"; done
+for i in "10 Projects/2026_demo-fluxbench/e_insights/"I-*.md; do uv run _system/scripts/media.py reel "$(basename "$i" | cut -d' ' -f1)"; done
 ```
 
 ## Views

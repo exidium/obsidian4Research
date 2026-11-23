@@ -22,7 +22,7 @@ published_to: https://analog.atlassian.net/wiki/spaces/SDPUXR/pages/388542371
     2.1. [[10 Projects/2026_demo-fluxbench/01 project#Reports|Reports]]  
     2.2. [[10 Projects/2026_demo-fluxbench/01 project#Insights|Insights]]  
 3. [[10 Projects/2026_demo-fluxbench/01 project#Operations & data|Operations & data]]  
-    3.1. [[10 Projects/2026_demo-fluxbench/02 insights review|Insights Review]]  
+    3.1. [[10 Projects/2026_demo-fluxbench/02 highlights review|Highlights Review]]  
     3.2. [[10 Projects/2026_demo-fluxbench/03 tag board|Tag board]]  
 
 # Study overview
@@ -72,5 +72,5 @@ Engineers grant trust per result, only after it has matched the bench, and the t
 
 # Operations & data
 
-- [[10 Projects/2026_demo-fluxbench/02 insights review|Insights Review]]: the highlights the AI proposed, waiting for a researcher to accept or reject them on the board.
+- [[10 Projects/2026_demo-fluxbench/02 highlights review|Highlights Review]]: the highlights the AI proposed, waiting for a researcher to accept or reject them on the board.
 - [[10 Projects/2026_demo-fluxbench/03 tag board|Tag board]]: tag groups and tags with definitions and counts, and one Kanban of highlights per tag group.

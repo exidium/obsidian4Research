@@ -7,7 +7,7 @@
 1. `cd ~/Projects/obsidian4Research && git pull && uv run _system/scripts/health.py` must print five `ok`.
 2. `uv run _system/scripts/media.py check` must list S-0001 to S-0003 as present and unchanged. Play `_raw/2026_demo-fluxbench/clips/H-S0001-0006.mp4` once in QuickTime: picture, caption, audio.
 3. `uv run _system/scripts/review.py pending` must show 35 pending (11 / 12 / 12). Do not accept them before the demo; they are the board.
-4. Obsidian: open the vault, Reading view, zoom in twice (Cmd and `=`). Open and pin, in this order: `01 project`, `02 insights review`, `I-2026_demo-fluxbench-01 …`, `S-0001`, `PE-01 …`. Close everything else. Check that Strange New Worlds badges show in `S-0001` and that the review board renders as a Kanban.
+4. Obsidian: open the vault, Reading view, zoom in twice (Cmd and `=`). Open and pin, in this order: `01 project`, `02 highlights review`, `I-2026_demo-fluxbench-01 …`, `S-0001`, `PE-01 …`. Close everything else. Check that Strange New Worlds badges show in `S-0001` and that the review board renders as a Kanban.
 5. Terminal: font 18 or larger, `cd ~/Projects/obsidian4Research`, start `claude`, run `/skills` once so the list is cached, then type `uv run _system/scripts/review.py pending` so it is in the history.
 6. Browser: logged in to analog.atlassian.net, tab open on the study page `SDPUXR/pages/388542371`, second tab on the readout `388542423`.
 7. Do Not Disturb on, Slack and Teams closed, Dock hidden.
@@ -37,7 +37,7 @@ Say: the recording is 65 minutes in SharePoint; the clip was cut by a script fro
 
 Terminal: `uv run _system/scripts/review.py pending`. Three sources, 35 proposals waiting.
 
-Obsidian: open `02 insights review`. The board: proposed, accepted, rejected, every card with its confidence. Drag one card from proposed to accepted.
+Obsidian: open `02 highlights review`. The board: proposed, accepted, rejected, every card with its confidence. Drag one card from proposed to accepted.
 
 Terminal, in Claude: type `accept everything from S-0001`. Claude runs the accept command; the board updates when you switch back (11 cards moved). Say: an hour of interview produces 20 to 30 highlights in a few minutes; the researcher reads the low-confidence ones and skims the rest. Nothing proposed reaches an insight, a report or Confluence until a person accepts it. Every decision is logged with who made it.
 
@@ -78,7 +78,7 @@ and delete the last 11 `review-accepted` lines from `_system/provenance.log` (or
 
 ## If something breaks
 
-- Board does not render: scroll down on `02 insights review` to the "Pending review" table, same data.
+- Board does not render: scroll down on `02 highlights review` to the "Pending review" table, same data.
 - Clip has no sound: say the voices are synthetic and show the transcript line instead; the stamp still proves the trace.
 - Confluence is slow: the readout is the same text as `f_deliverables/Readout - FluxBench Designer Trust.md` in Obsidian.
 - Claude does not answer: every sentence above has its command in "Live commands".

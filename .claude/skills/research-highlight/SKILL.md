@@ -51,12 +51,12 @@ accepted highlights  →  research-synthesize
 3. `PROPOSED` project tags: append to `d_tags/tags.yaml` under the right group with `status: proposed`, `proposed_by: ai`, `definition`, `evidence: [H-...]`. `research-organize` activates them.
 4. Set the review doc `status: implemented` and the source `ris_status: review`. `uv run _system/scripts/audit.py`; fix what it reports for this source (a non-verbatim quote is the usual error).
 5. `uv run _system/scripts/tag_board.py <project>` and `... --canvas`; `uv run _system/scripts/personas.py refresh` (persona appearance lists).
-6. `bash _system/scripts/provenance.sh research-highlight implement S-#### $MODEL`. Report: count by confidence, tag distribution, proposed project tags, doubts, and point the user to `02 insights review.md` (or `review.py pending`) to accept or reject by exception.
+6. `bash _system/scripts/provenance.sh research-highlight implement S-#### $MODEL`. Report: count by confidence, tag distribution, proposed project tags, doubts, and point the user to `02 highlights review.md` (or `review.py pending`) to accept or reject by exception.
 
 ## The human gate (review by exception)
 
 - `uv run _system/scripts/review.py pending [<project>]`: what is waiting, by source and confidence.
-- Board: `02 insights review.md`, drag between proposed / accepted / rejected; cards show confidence, so the researcher reads the low ones and skims the high ones.
+- Board: `02 highlights review.md`, drag between proposed / accepted / rejected; cards show confidence, so the researcher reads the low ones and skims the high ones.
 - Bulk: `uv run _system/scripts/review.py accept --source S-0004 --min-confidence high`, `review.py reject H-S0004-0012 H-S0004-0019 --reason "interviewer speech"`, `review.py accept --project <p> --tag insight/pain-point`. Each decision is logged to provenance with the researcher ID (`RESEARCHER=P-0xx`).
 - The user can also say it ("accept all high from S-0004, reject 12 and 19") and you run the commands.
 - Rejected highlights keep `review: rejected` and drop out of boards and synthesis. Never delete evidence.

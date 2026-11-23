@@ -36,7 +36,7 @@ Open `10 Projects/2026_demo-fluxbench/01 project`. It is a complete, fully ficti
 1. **Contents** at the top of the page: Study overview (introduction, research questions, participants), Findings (reports, insights), Operations & data (links to the review board and the tag board).
 2. **Participants table** → click a persona (`PE-01 …`) → "Where they appear" lists the projects, insights and highlights behind that persona.
 3. **Insights table** → open `I-…-01` → the evidence blocks are highlights. Click one (`H-S0001-0006`): verbatim quote, tags, confidence, and "Open in transcript", which lands on the exact line in `b_sources/S-0001`. In the transcript, the badge beside a block means a highlight references it; hover to see which.
-4. **02 insights review**: the Kanban of highlights waiting for a decision. Drag a card between proposed / accepted / rejected; that changes its `review` property.
+4. **02 highlights review**: the Kanban of highlights waiting for a decision. Drag a card between proposed / accepted / rejected; that changes its `review` property.
 5. **03 tag board**: tags as lanes, highlights as cards, one board per tag group. Click a tag for its definition and every highlight that carries it.
 6. **f_deliverables**: the readout written from the insights.
 
@@ -56,11 +56,11 @@ Open a terminal in the vault folder and start `claude`. Then talk to it; the ski
 
 | Step | Say | What happens |
 |---|---|---|
-| Create | "new project: discovery on LTpowerCAD export, 6 external interviews" | `10 Projects/2026_…/` with `01 project`, `02 insights review`, `03 tag board`, folders `a_setup` … `f_deliverables`, seed tag groups in `d_tags/tags.yaml`, SETUP templates |
+| Create | "new project: discovery on LTpowerCAD export, 6 external interviews" | `10 Projects/2026_…/` with `01 project`, `02 highlights review`, `03 tag board`, folders `a_setup` … `f_deliverables`, seed tag groups in `d_tags/tags.yaml`, SETUP templates |
 | Fill in | write the introduction and the discussion guide in `01 project` and `a_setup/` | or ask Claude to draft them from your brief |
 | Participants | export the study from Rally to `_raw/rally/`, then "sync participants" | cards in `20 Participants/`, identities in `_raw/`, a persona per participant (or a new one proposed for you to confirm) |
 | After each interview | drop recording + transcript in `00 Inbox/`, then "ingest the inbox for P-004" | source note, pseudonymised, PII scanned, recording linked; then tagging runs by itself and reports "24 highlights proposed: 15 high, 7 medium, 2 low" |
-| Review | open `02 insights review`, or "accept everything high from S-0004, reject 12 and 19" | the human gate; nothing proposed goes further |
+| Review | open `02 highlights review`, or "accept everything high from S-0004, reject 12 and 19" | the human gate; nothing proposed goes further |
 | Synthesize | "synthesize the project" | insight notes from accepted highlights, with evidence levels and recommendations; you edit and mark them reviewed |
 | Report | "write the readout for the product owner" | `f_deliverables/Readout - ….md`, registered in the Reports table |
 | Share | "publish the study to Confluence" | preview, your yes, then the page tree under SDP UX Research; URLs written back |

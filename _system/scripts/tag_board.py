@@ -14,7 +14,7 @@
   tag_board.py <project_id> --canvas [--dimension journey]
         -> 10 Projects/<project>/a_setup/boards/tag-board.canvas : one lane per tag of that dimension, highlights as
            draggable cards. Drag in Obsidian, then run canvas_sync.py to apply the new tags.
-Also writes 10 Projects/<project>/a_setup/boards/tags.base (tag cards by group). Generated files live in a_setup/boards/ and d_tags/; the root holds 01 project, 02 insights review and 03 tag board.
+Also writes 10 Projects/<project>/a_setup/boards/tags.base (tag cards by group). Generated files live in a_setup/boards/ and d_tags/; the root holds 01 project, 02 highlights review and 03 tag board.
 Only the *structure* (which groups exist) is generated; every board reads the highlight notes live.
 Re-run when a tag group is added to tags/tags.yaml. Never hand-edit the outputs (except by dragging)."""
 import sys, json, random

@@ -10,7 +10,7 @@ NOTE_DIRS = ["10 Projects", "90 Archive", "20 Participants", "30 Personas"]
 DIRS = {"setup": "a_setup", "sources": "b_sources", "highlights": "c_highlights", "tags": "d_tags", "insights": "e_insights", "deliverables": "f_deliverables"}
 BOARDS = "a_setup/boards"
 REFERENCE = "b_sources/reference"
-PAGES = {"project": "01 project", "review": "02 insights review", "tagboard": "03 tag board"}
+PAGES = {"project": "01 project", "review": "02 highlights review", "tagboard": "03 tag board"}
 FM_RE = re.compile(r"\A---\n(.*?)\n---\n?", re.S)
 BLOCK_RE = re.compile(r"\^(s\d{4}-\d{4})\s*$", re.M)
 

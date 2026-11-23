@@ -9,7 +9,7 @@ This folder is an Obsidian vault and a research repository. Read `_system/schema
 3. **Never read `_raw/participants.csv` into context.** Scripts match names from it and report line numbers; you act on the report.
 4. **Two tag levels, like Dovetail.** Workspace tags live in `_system/taxonomy.yaml` (experience, functionality, insight, sentiment, ops, journey, software, market) and are admin-controlled: never add, rename, or deprecate them. Project tags live in each project's `d_tags/tags.yaml` in numbered groups with definitions. Priority: existing workspace tag, then existing project tag, then leave untagged, then propose a project tag (`status: proposed`, with evidence) for the researcher to decide. Every highlight carries at least one workspace tag. Never invent a tag string.
 5. **Insights cite highlights, not transcripts.** Synthesis reads `c_highlights/` only. If you need more context for a highlight, open its single linked block, not the whole source.
-6. **Tagging is automatic; the review is the gate.** `research-highlight` writes highlights straight from the transcript as `review: proposed` with a `confidence`; `research-ingest` triggers it. Nothing `proposed` reaches synthesis, a report or Confluence until a researcher accepts it (board in `02 insights review.md`, or `review.py`). Rejections are kept, never deleted.
+6. **Tagging is automatic; the review is the gate.** `research-highlight` writes highlights straight from the transcript as `review: proposed` with a `confidence`; `research-ingest` triggers it. Nothing `proposed` reaches synthesis, a report or Confluence until a researcher accepts it (board in `02 highlights review.md`, or `review.py`). Rejections are kept, never deleted.
 7. **Append to `_system/provenance.log`** after every ingest, highlight run, synthesis, or publish, one line:
    `ISO-date<TAB>skill<TAB>action<TAB>target-id<TAB>model`.
 8. **Never mark up a transcript to show highlights.** The signal comes from the Strange New Worlds plugin reading backlinks; highlights link to their block (`![[S-0001#^s0001-0014]]` plus an "Open in transcript" link with the timestamp).
@@ -31,7 +31,7 @@ This folder is an Obsidian vault and a research repository. Read `_system/schema
 
 ## Where things go
 
-- New study: `research-organize` → `new project`. Creates `10 Projects/YYYY_slug/` with three root pages, `01 project.md` (Study Overview), `02 insights review.md`, `03 tag board.md`, and lettered folders in reading order: `a_setup/` (SETUP docs and `boards/`), `b_sources/` (transcripts and `reference/`), `c_highlights/`, `d_tags/` (`tags.yaml` and tag pages), `e_insights/`, `f_deliverables/`. Nothing else goes at the project root.
+- New study: `research-organize` → `new project`. Creates `10 Projects/YYYY_slug/` with three root pages, `01 project.md` (Study Overview), `02 highlights review.md`, `03 tag board.md`, and lettered folders in reading order: `a_setup/` (SETUP docs and `boards/`), `b_sources/` (transcripts and `reference/`), `c_highlights/`, `d_tags/` (`tags.yaml` and tag pages), `e_insights/`, `f_deliverables/`. Nothing else goes at the project root.
 - Source state is `ris_status` (raw, in-progress, review, published, excluded, archived), as in Dovetail.
 - Drop files in `00 Inbox/`. Ingest moves media to `_raw/<project>/` and writes `b_sources/S-####.md`.
 - Highlights go in `c_highlights/H-S####-#### <title>.md`, insights in `e_insights/I-<project>-## <finding>.md`.

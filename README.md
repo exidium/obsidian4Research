@@ -11,7 +11,7 @@ Open this folder as an Obsidian vault. Run Claude Code from this folder to use t
 00 Synthesis/    one folder per product domain: Landscape, What We Know, Open Questions, Study Index
 20 Participants/ one card per participant (role, experience, market, industry, region, consent, persona); names stay in _raw/
 30 Personas/     vault-wide personas; every participant is assigned one, or a new one is proposed
-10 Projects/     one folder per study. Root pages: 01 project (Study Overview), 02 insights review, 03 tag board.
+10 Projects/     one folder per study. Root pages: 01 project (Study Overview), 02 highlights review, 03 tag board.
                  Folders in reading order: a_setup/ (SETUP docs, boards/), b_sources/ (transcripts, reference/), c_highlights/, d_tags/ (tags.yaml + tag pages), e_insights/, f_deliverables/
 90 Archive/      closed projects, same structure
 _system/         taxonomy.yaml, schema.md, templates/, scripts/, bases/, provenance.log
@@ -82,5 +82,5 @@ for i in "10 Projects/2026_demo-fluxbench/e_insights/"I-*.md; do uv run _system/
 
 - **Tag board (Dovetail-style):** the Study Overview embeds `a_setup/boards/tags.base` → lanes are tag groups, cards are tags with definition and counts. Click a tag to open its page: definition, counts, and a live table of its highlights (workspace tag pages group by project). Tag pages live in `_system/tags/<dimension>/` (workspace) and `10 Projects/<p>/tags/<group>/` (project); `tag_board.py` writes them from the taxonomies and refreshes counts. Native Bases.
 - **Highlight boards:** `03 tag board.md` per project has one native Kanban per tag group (lanes are the group's tags), plus boards by participant and review status. Vault-wide: `_system/tag-board.md`, `_system/bases/tags-all.base`, `_system/bases/highlights-all.base`.
-- **Review board:** each project's `02 insights review.md` is a Kanban with proposed / accepted / rejected lanes (`_system/bases/highlights-review.base`); dragging a card sets its `review` property. Only accepted highlights feed synthesis.
-- **Per project:** `01 project` links to `02 insights review` and `03 tag board` and embeds the insights table; `a_setup/boards/tag-board.canvas` has lanes you can drag cards between, then `canvas_sync.py` re-tags.
+- **Review board:** each project's `02 highlights review.md` is a Kanban with proposed / accepted / rejected lanes (`_system/bases/highlights-review.base`); dragging a card sets its `review` property. Only accepted highlights feed synthesis.
+- **Per project:** `01 project` links to `02 highlights review` and `03 tag board` and embeds the insights table; `a_setup/boards/tag-board.canvas` has lanes you can drag cards between, then `canvas_sync.py` re-tags.

@@ -21,7 +21,7 @@ product_space: []
     2.1. [[10 Projects/{{project_id}}/01 project#Reports|Reports]]  
     2.2. [[10 Projects/{{project_id}}/01 project#Insights|Insights]]  
 3. [[10 Projects/{{project_id}}/01 project#Operations & data|Operations & data]]  
-    3.1. [[10 Projects/{{project_id}}/02 insights review|Insights Review]]  
+    3.1. [[10 Projects/{{project_id}}/02 highlights review|Highlights Review]]  
     3.2. [[10 Projects/{{project_id}}/03 tag board|Tag board]]  
 
 # Study overview
@@ -61,5 +61,5 @@ product_space: []
 
 # Operations & data
 
-- [[10 Projects/{{project_id}}/02 insights review|Insights Review]]: the highlights the AI proposed, waiting for a researcher to accept or reject them on the board.
+- [[10 Projects/{{project_id}}/02 highlights review|Highlights Review]]: the highlights the AI proposed, waiting for a researcher to accept or reject them on the board.
 - [[10 Projects/{{project_id}}/03 tag board|Tag board]]: tag groups and tags with definitions and counts, and one Kanban of highlights per tag group.

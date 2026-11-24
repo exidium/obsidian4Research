@@ -15,6 +15,7 @@ This folder is an Obsidian vault and a research repository. Read `_system/schema
 8. **Never mark up a transcript to show highlights.** The signal comes from the Strange New Worlds plugin reading backlinks; highlights link to their block (`![[S-0001#^s0001-0014]]` plus an "Open in transcript" link with the timestamp).
 9. **Frontmatter properties, not inline hashtags.** All queryable metadata goes in frontmatter so Bases can read it.
 10. **One source per review run. One project per synthesis run.** Don't batch across projects.
+11. **Every non-obvious decision about the system goes in `_system/docs/decisions.md`**: numbered, dated, with the reason. Append; never rewrite. The organisational design (surfaces, people, access, uploads, where the skills run) is `_system/docs/operating-model.md`; keep it in step.
 
 ## Participants and personas (vault-wide)
 
